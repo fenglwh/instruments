@@ -11,7 +11,7 @@ public:
 
     CRemote();
     ~CRemote();
-    std::vector<char[256]> listResource();
+//    std::vector<char[256]> listResource();
     int Open(char * lpsession);
 
     int Write(char * command);
