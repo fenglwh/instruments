@@ -15,11 +15,11 @@ CRemote::~CRemote() {
 int CRemote::OpenDM() {
     return (VI_SUCCESS == viOpenDefaultRM(&m_viSession));
 }
-
-std::vector<char[256]> CRemote::listResource() {
-	std::vector<char[256]> retVal;
-	return retVal;
-}
+// I found these things will cuz issues, then I toggled these line for further use
+// std::vector<char[256]> CRemote::listResource() {
+// 	std::vector<char[256]> retVal;
+// 	return retVal;
+// }
 
 int CRemote::Open(char *lpsession) {
 	this->OpenDM();
