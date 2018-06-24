@@ -30,6 +30,9 @@ int CRemote::Write(char *command) {
     ViUInt32 iretcount = 0;
     char pBuffer[16640] = {0};
     strcpy(pBuffer,command);
+	if (command[strlen(command) - 1] != '\n') {
+		strcat(command, "\n");
+	}
     return (VI_SUCCESS == viWrite(m_vistr, (ViBuf)pBuffer, (unsigned int)strlen(pBuffer), &iretcount));
 }
 
