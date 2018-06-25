@@ -17,10 +17,10 @@ LTE_channel_map = {
     # channel interval=0.1MHz
     # band: DL_freq_low,DL_channel_start,DL_channel stop DL-UL freq offset,UL-DL channel offset
     "B1": {
-        "channel_dl_low": 0,
-        "channel_dl_high": 599,
-        "channel_ul_low": 18000,
-        "channel_ul_high": 18599,
+        "dl_channel_low": 0,
+        "dl_channel_high": 599,
+        "ul_channel_low": 18000,
+        "ul_channel_high": 18599,
         "dl_freq_low": 2110,
         "dl_freq_high": 2169.9,
         "ul_freq_low": 1920,
@@ -31,10 +31,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 0) * 0.1 + 2110,
     },
     "B2": {
-        "channel_dl_low": 600,
-        "channel_dl_high": 1199,
-        "channel_ul_low": 18600,
-        "channel_ul_high": 19199,
+        "dl_channel_low": 600,
+        "dl_channel_high": 1199,
+        "ul_channel_low": 18600,
+        "ul_channel_high": 19199,
         "dl_freq_low": 1930,
         "dl_freq_high": 1989.9,
         "ul_freq_low": 1850,
@@ -45,10 +45,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 600) * 0.1 + 1930,
     },
     "B3": {
-        "channel_dl_low": 1200,
-        "channel_dl_high": 1949,
-        "channel_ul_low": 19200,
-        "channel_ul_high": 19949,
+        "dl_channel_low": 1200,
+        "dl_channel_high": 1949,
+        "ul_channel_low": 19200,
+        "ul_channel_high": 19949,
         "dl_freq_low": 1805,
         "dl_freq_high": 1879.9,
         "ul_freq_low": 1710,
@@ -59,10 +59,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 1200) * 0.1 + 1805,
     },
     "B4": {
-        "channel_dl_low": 1950,
-        "channel_dl_high": 2399,
-        "channel_ul_low": 19950,
-        "channel_ul_high": 20399,
+        "dl_channel_low": 1950,
+        "dl_channel_high": 2399,
+        "ul_channel_low": 19950,
+        "ul_channel_high": 20399,
         "dl_freq_low": 2110,
         "dl_freq_high": 2154.9,
         "ul_freq_low": 1710,
@@ -73,10 +73,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 1950) * 0.1 + 2110,
     },
     "B5": {
-        "channel_dl_low": 2400,
-        "channel_dl_high": 2649,
-        "channel_ul_low": 20400,
-        "channel_ul_high": 20649,
+        "dl_channel_low": 2400,
+        "dl_channel_high": 2649,
+        "ul_channel_low": 20400,
+        "ul_channel_high": 20649,
         "dl_freq_low": 869,
         "dl_freq_high": 893.9,
         "ul_freq_low": 824,
@@ -87,10 +87,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 2400) * 0.1 + 869,
     },
     "B6": {
-        "channel_dl_low": 2650,
-        "channel_dl_high": 2749,
-        "channel_ul_low": 20650,
-        "channel_ul_high": 20749,
+        "dl_channel_low": 2650,
+        "dl_channel_high": 2749,
+        "ul_channel_low": 20650,
+        "ul_channel_high": 20749,
         "dl_freq_low": 875,
         "dl_freq_high": 884.9,
         "ul_freq_low": 830,
@@ -101,10 +101,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 2650) * 0.1 + 875,
     },
     "B7": {
-        "channel_dl_low": 2750,
-        "channel_dl_high": 3449,
-        "channel_ul_low": 20750,
-        "channel_ul_high": 21449,
+        "dl_channel_low": 2750,
+        "dl_channel_high": 3449,
+        "ul_channel_low": 20750,
+        "ul_channel_high": 21449,
         "dl_freq_low": 2620,
         "dl_freq_high": 2689.9,
         "ul_freq_low": 2500,
@@ -115,10 +115,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 2750) * 0.1 + 2620,
     },
     "B8": {
-        "channel_dl_low": 3450,
-        "channel_dl_high": 3799,
-        "channel_ul_low": 21450,
-        "channel_ul_high": 21799,
+        "dl_channel_low": 3450,
+        "dl_channel_high": 3799,
+        "ul_channel_low": 21450,
+        "ul_channel_high": 21799,
         "dl_freq_low": 925,
         "dl_freq_high": 959.9,
         "ul_freq_low": 880,
@@ -129,10 +129,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 3450) * 0.1 + 925,
     },
     "B9": {
-        "channel_dl_low": 3800,
-        "channel_dl_high": 4149,
-        "channel_ul_low": 21800,
-        "channel_ul_high": 22149,
+        "dl_channel_low": 3800,
+        "dl_channel_high": 4149,
+        "ul_channel_low": 21800,
+        "ul_channel_high": 22149,
         "dl_freq_low": 1844.9,
         "dl_freq_high": 1879.8000000000002,
         "ul_freq_low": 1749.9,
@@ -143,10 +143,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 3800) * 0.1 + 1844.9,
     },
     "B10": {
-        "channel_dl_low": 4150,
-        "channel_dl_high": 4749,
-        "channel_ul_low": 22150,
-        "channel_ul_high": 22749,
+        "dl_channel_low": 4150,
+        "dl_channel_high": 4749,
+        "ul_channel_low": 22150,
+        "ul_channel_high": 22749,
         "dl_freq_low": 2110,
         "dl_freq_high": 2169.9,
         "ul_freq_low": 1710,
@@ -157,10 +157,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 4150) * 0.1 + 2110,
     },
     "B11": {
-        "channel_dl_low": 4750,
-        "channel_dl_high": 4949,
-        "channel_ul_low": 22750,
-        "channel_ul_high": 22949,
+        "dl_channel_low": 4750,
+        "dl_channel_high": 4949,
+        "ul_channel_low": 22750,
+        "ul_channel_high": 22949,
         "dl_freq_low": 1475.9,
         "dl_freq_high": 1495.8000000000002,
         "ul_freq_low": 1427.9,
@@ -171,10 +171,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 4750) * 0.1 + 1475.9,
     },
     "B12": {
-        "channel_dl_low": 5010,
-        "channel_dl_high": 5179,
-        "channel_ul_low": 23010,
-        "channel_ul_high": 23179,
+        "dl_channel_low": 5010,
+        "dl_channel_high": 5179,
+        "ul_channel_low": 23010,
+        "ul_channel_high": 23179,
         "dl_freq_low": 729,
         "dl_freq_high": 745.9,
         "ul_freq_low": 699,
@@ -185,10 +185,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 5010) * 0.1 + 729,
     },
     "B13": {
-        "channel_dl_low": 5180,
-        "channel_dl_high": 5279,
-        "channel_ul_low": 23180,
-        "channel_ul_high": 23279,
+        "dl_channel_low": 5180,
+        "dl_channel_high": 5279,
+        "ul_channel_low": 23180,
+        "ul_channel_high": 23279,
         "dl_freq_low": 746,
         "dl_freq_high": 755.9,
         "ul_freq_low": 777,
@@ -199,10 +199,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 5180) * 0.1 + 746,
     },
     "B14": {
-        "channel_dl_low": 5280,
-        "channel_dl_high": 5379,
-        "channel_ul_low": 23280,
-        "channel_ul_high": 23379,
+        "dl_channel_low": 5280,
+        "dl_channel_high": 5379,
+        "ul_channel_low": 23280,
+        "ul_channel_high": 23379,
         "dl_freq_low": 758,
         "dl_freq_high": 767.9,
         "ul_freq_low": 788,
@@ -213,10 +213,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 5280) * 0.1 + 758,
     },
     "B17": {
-        "channel_dl_low": 5730,
-        "channel_dl_high": 5849,
-        "channel_ul_low": 23730,
-        "channel_ul_high": 23849,
+        "dl_channel_low": 5730,
+        "dl_channel_high": 5849,
+        "ul_channel_low": 23730,
+        "ul_channel_high": 23849,
         "dl_freq_low": 734,
         "dl_freq_high": 745.9,
         "ul_freq_low": 704,
@@ -227,10 +227,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 5730) * 0.1 + 734,
     },
     "B18": {
-        "channel_dl_low": 5850,
-        "channel_dl_high": 5999,
-        "channel_ul_low": 23850,
-        "channel_ul_high": 23999,
+        "dl_channel_low": 5850,
+        "dl_channel_high": 5999,
+        "ul_channel_low": 23850,
+        "ul_channel_high": 23999,
         "dl_freq_low": 860,
         "dl_freq_high": 874.9,
         "ul_freq_low": 815,
@@ -241,10 +241,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 5850) * 0.1 + 860,
     },
     "B19": {
-        "channel_dl_low": 6000,
-        "channel_dl_high": 6149,
-        "channel_ul_low": 24000,
-        "channel_ul_high": 24149,
+        "dl_channel_low": 6000,
+        "dl_channel_high": 6149,
+        "ul_channel_low": 24000,
+        "ul_channel_high": 24149,
         "dl_freq_low": 875,
         "dl_freq_high": 889.9,
         "ul_freq_low": 830,
@@ -255,10 +255,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 6000) * 0.1 + 875,
     },
     "B20": {
-        "channel_dl_low": 6150,
-        "channel_dl_high": 6449,
-        "channel_ul_low": 24150,
-        "channel_ul_high": 24449,
+        "dl_channel_low": 6150,
+        "dl_channel_high": 6449,
+        "ul_channel_low": 24150,
+        "ul_channel_high": 24449,
         "dl_freq_low": 791,
         "dl_freq_high": 820.9,
         "ul_freq_low": 832,
@@ -269,10 +269,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 6150) * 0.1 + 791,
     },
     "B21": {
-        "channel_dl_low": 6450,
-        "channel_dl_high": 6599,
-        "channel_ul_low": 24450,
-        "channel_ul_high": 24599,
+        "dl_channel_low": 6450,
+        "dl_channel_high": 6599,
+        "ul_channel_low": 24450,
+        "ul_channel_high": 24599,
         "dl_freq_low": 1495.9,
         "dl_freq_high": 1510.8000000000002,
         "ul_freq_low": 1447.9,
@@ -283,10 +283,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 6450) * 0.1 + 1495.9,
     },
     "B22": {
-        "channel_dl_low": 6600,
-        "channel_dl_high": 7399,
-        "channel_ul_low": 24600,
-        "channel_ul_high": 25399,
+        "dl_channel_low": 6600,
+        "dl_channel_high": 7399,
+        "ul_channel_low": 24600,
+        "ul_channel_high": 25399,
         "dl_freq_low": 3510,
         "dl_freq_high": 3589.9,
         "ul_freq_low": 3410,
@@ -297,10 +297,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 6600) * 0.1 + 3510,
     },
     "B23": {
-        "channel_dl_low": 7500,
-        "channel_dl_high": 7699,
-        "channel_ul_low": 25500,
-        "channel_ul_high": 25699,
+        "dl_channel_low": 7500,
+        "dl_channel_high": 7699,
+        "ul_channel_low": 25500,
+        "ul_channel_high": 25699,
         "dl_freq_low": 2180,
         "dl_freq_high": 2199.9,
         "ul_freq_low": 2000,
@@ -311,10 +311,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 7500) * 0.1 + 2180,
     },
     "B24": {
-        "channel_dl_low": 7700,
-        "channel_dl_high": 8039,
-        "channel_ul_low": 25700,
-        "channel_ul_high": 26039,
+        "dl_channel_low": 7700,
+        "dl_channel_high": 8039,
+        "ul_channel_low": 25700,
+        "ul_channel_high": 26039,
         "dl_freq_low": 1525,
         "dl_freq_high": 1558.9,
         "ul_freq_low": 1626.5,
@@ -325,10 +325,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 7700) * 0.1 + 1525,
     },
     "B25": {
-        "channel_dl_low": 8040,
-        "channel_dl_high": 8689,
-        "channel_ul_low": 26040,
-        "channel_ul_high": 26689,
+        "dl_channel_low": 8040,
+        "dl_channel_high": 8689,
+        "ul_channel_low": 26040,
+        "ul_channel_high": 26689,
         "dl_freq_low": 1930,
         "dl_freq_high": 1994.9,
         "ul_freq_low": 1850,
@@ -339,10 +339,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 8040) * 0.1 + 1930,
     },
     "B26": {
-        "channel_dl_low": 8690,
-        "channel_dl_high": 9039,
-        "channel_ul_low": 26690,
-        "channel_ul_high": 27039,
+        "dl_channel_low": 8690,
+        "dl_channel_high": 9039,
+        "ul_channel_low": 26690,
+        "ul_channel_high": 27039,
         "dl_freq_low": 859,
         "dl_freq_high": 893.9,
         "ul_freq_low": 814,
@@ -353,10 +353,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 8690) * 0.1 + 859,
     },
     "B27": {
-        "channel_dl_low": 9040,
-        "channel_dl_high": 9209,
-        "channel_ul_low": 27040,
-        "channel_ul_high": 27209,
+        "dl_channel_low": 9040,
+        "dl_channel_high": 9209,
+        "ul_channel_low": 27040,
+        "ul_channel_high": 27209,
         "dl_freq_low": 852,
         "dl_freq_high": 868.9,
         "ul_freq_low": 807,
@@ -367,10 +367,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9040) * 0.1 + 852,
     },
     "B28": {
-        "channel_dl_low": 9210,
-        "channel_dl_high": 9659,
-        "channel_ul_low": 27210,
-        "channel_ul_high": 27659,
+        "dl_channel_low": 9210,
+        "dl_channel_high": 9659,
+        "ul_channel_low": 27210,
+        "ul_channel_high": 27659,
         "dl_freq_low": 758,
         "dl_freq_high": 802.9,
         "ul_freq_low": 703,
@@ -381,10 +381,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9210) * 0.1 + 758,
     },
     "B29": {
-        "channel_dl_low": 9660,
-        "channel_dl_high": 9769,
-        "channel_ul_low": None,
-        "channel_ul_high": None,
+        "dl_channel_low": 9660,
+        "dl_channel_high": 9769,
+        "ul_channel_low": None,
+        "ul_channel_high": None,
         "dl_freq_low": 717,
         "dl_freq_high": 727.9,
         "ul_freq_low": None,
@@ -393,10 +393,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9660) * 0.1 + 717,
     },
     "B30": {
-        "channel_dl_low": 9770,
-        "channel_dl_high": 9869,
-        "channel_ul_low": 27660,
-        "channel_ul_high": 27759,
+        "dl_channel_low": 9770,
+        "dl_channel_high": 9869,
+        "ul_channel_low": 27660,
+        "ul_channel_high": 27759,
         "dl_freq_low": 2350,
         "dl_freq_high": 2359.9,
         "ul_freq_low": 2305,
@@ -407,10 +407,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9770) * 0.1 + 2350,
     },
     "B31": {
-        "channel_dl_low": 9870,
-        "channel_dl_high": 9919,
-        "channel_ul_low": 27760,
-        "channel_ul_high": 27809,
+        "dl_channel_low": 9870,
+        "dl_channel_high": 9919,
+        "ul_channel_low": 27760,
+        "ul_channel_high": 27809,
         "dl_freq_low": 462.5,
         "dl_freq_high": 467.4,
         "ul_freq_low": 452.5,
@@ -421,10 +421,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9870) * 0.1 + 462.5,
     },
     "B32": {
-        "channel_dl_low": 9920,
-        "channel_dl_high": 10359,
-        "channel_ul_low": None,
-        "channel_ul_high": None,
+        "dl_channel_low": 9920,
+        "dl_channel_high": 10359,
+        "ul_channel_low": None,
+        "ul_channel_high": None,
         "dl_freq_low": 1452,
         "dl_freq_high": 1495.9,
         "ul_freq_low": None,
@@ -433,10 +433,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9920) * 0.1 + 1452,
     },
     "B33": {
-        "channel_dl_low": 36000,
-        "channel_dl_high": 36199,
-        "channel_ul_low": 36000,
-        "channel_ul_high": 36199,
+        "dl_channel_low": 36000,
+        "dl_channel_high": 36199,
+        "ul_channel_low": 36000,
+        "ul_channel_high": 36199,
         "dl_freq_low": 1900,
         "dl_freq_high": 1919.9,
         "ul_freq_low": 1900,
@@ -447,10 +447,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 36000) * 0.1 + 1900,
     },
     "B34": {
-        "channel_dl_low": 36200,
-        "channel_dl_high": 36349,
-        "channel_ul_low": 36200,
-        "channel_ul_high": 36349,
+        "dl_channel_low": 36200,
+        "dl_channel_high": 36349,
+        "ul_channel_low": 36200,
+        "ul_channel_high": 36349,
         "dl_freq_low": 2010,
         "dl_freq_high": 2024.9,
         "ul_freq_low": 2010,
@@ -461,10 +461,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 36200) * 0.1 + 2010,
     },
     "B35": {
-        "channel_dl_low": 36350,
-        "channel_dl_high": 36949,
-        "channel_ul_low": 36350,
-        "channel_ul_high": 36949,
+        "dl_channel_low": 36350,
+        "dl_channel_high": 36949,
+        "ul_channel_low": 36350,
+        "ul_channel_high": 36949,
         "dl_freq_low": 1850,
         "dl_freq_high": 1909.9,
         "ul_freq_low": 1850,
@@ -475,10 +475,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 36350) * 0.1 + 1850,
     },
     "B36": {
-        "channel_dl_low": 36950,
-        "channel_dl_high": 37549,
-        "channel_ul_low": 36950,
-        "channel_ul_high": 37549,
+        "dl_channel_low": 36950,
+        "dl_channel_high": 37549,
+        "ul_channel_low": 36950,
+        "ul_channel_high": 37549,
         "dl_freq_low": 1930,
         "dl_freq_high": 1989.9,
         "ul_freq_low": 1930,
@@ -489,10 +489,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 36950) * 0.1 + 1930,
     },
     "B37": {
-        "channel_dl_low": 37550,
-        "channel_dl_high": 37749,
-        "channel_ul_low": 37550,
-        "channel_ul_high": 37749,
+        "dl_channel_low": 37550,
+        "dl_channel_high": 37749,
+        "ul_channel_low": 37550,
+        "ul_channel_high": 37749,
         "dl_freq_low": 1910,
         "dl_freq_high": 1929.9,
         "ul_freq_low": 1910,
@@ -503,10 +503,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 37550) * 0.1 + 1910,
     },
     "B38": {
-        "channel_dl_low": 37750,
-        "channel_dl_high": 38249,
-        "channel_ul_low": 37750,
-        "channel_ul_high": 38249,
+        "dl_channel_low": 37750,
+        "dl_channel_high": 38249,
+        "ul_channel_low": 37750,
+        "ul_channel_high": 38249,
         "dl_freq_low": 2570,
         "dl_freq_high": 2619.9,
         "ul_freq_low": 2570,
@@ -517,10 +517,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 37750) * 0.1 + 2570,
     },
     "B39": {
-        "channel_dl_low": 38250,
-        "channel_dl_high": 28649,
-        "channel_ul_low": 38250,
-        "channel_ul_high": 28649,
+        "dl_channel_low": 38250,
+        "dl_channel_high": 28649,
+        "ul_channel_low": 38250,
+        "ul_channel_high": 28649,
         "dl_freq_low": 1880,
         "dl_freq_high": 919.9,
         "ul_freq_low": 1880,
@@ -531,10 +531,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 38250) * 0.1 + 1880,
     },
     "B40": {
-        "channel_dl_low": 38650,
-        "channel_dl_high": 39649,
-        "channel_ul_low": 38650,
-        "channel_ul_high": 39649,
+        "dl_channel_low": 38650,
+        "dl_channel_high": 39649,
+        "ul_channel_low": 38650,
+        "ul_channel_high": 39649,
         "dl_freq_low": 2300,
         "dl_freq_high": 2399.9,
         "ul_freq_low": 2300,
@@ -545,10 +545,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 38650) * 0.1 + 2300,
     },
     "B41": {
-        "channel_dl_low": 39650,
-        "channel_dl_high": 41589,
-        "channel_ul_low": 39650,
-        "channel_ul_high": 41589,
+        "dl_channel_low": 39650,
+        "dl_channel_high": 41589,
+        "ul_channel_low": 39650,
+        "ul_channel_high": 41589,
         "dl_freq_low": 2496,
         "dl_freq_high": 2689.9,
         "ul_freq_low": 2496,
@@ -559,10 +559,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 39650) * 0.1 + 2496,
     },
     "B42": {
-        "channel_dl_low": 41590,
-        "channel_dl_high": 43589,
-        "channel_ul_low": 41590,
-        "channel_ul_high": 43589,
+        "dl_channel_low": 41590,
+        "dl_channel_high": 43589,
+        "ul_channel_low": 41590,
+        "ul_channel_high": 43589,
         "dl_freq_low": 3400,
         "dl_freq_high": 3599.9,
         "ul_freq_low": 3400,
@@ -573,10 +573,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 41590) * 0.1 + 3400,
     },
     "B43": {
-        "channel_dl_low": 43590,
-        "channel_dl_high": 45589,
-        "channel_ul_low": 43590,
-        "channel_ul_high": 45589,
+        "dl_channel_low": 43590,
+        "dl_channel_high": 45589,
+        "ul_channel_low": 43590,
+        "ul_channel_high": 45589,
         "dl_freq_low": 3600,
         "dl_freq_high": 3799.9,
         "ul_freq_low": 3600,
@@ -587,10 +587,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 43590) * 0.1 + 3600,
     },
     "B44": {
-        "channel_dl_low": 45590,
-        "channel_dl_high": 46589,
-        "channel_ul_low": 45590,
-        "channel_ul_high": 46589,
+        "dl_channel_low": 45590,
+        "dl_channel_high": 46589,
+        "ul_channel_low": 45590,
+        "ul_channel_high": 46589,
         "dl_freq_low": 703,
         "dl_freq_high": 802.9,
         "ul_freq_low": 703,
@@ -601,10 +601,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 45590) * 0.1 + 703,
     },
     "B45": {
-        "channel_dl_low": 46590,
-        "channel_dl_high": 46789,
-        "channel_ul_low": 46590,
-        "channel_ul_high": 46789,
+        "dl_channel_low": 46590,
+        "dl_channel_high": 46789,
+        "ul_channel_low": 46590,
+        "ul_channel_high": 46789,
         "dl_freq_low": 1447,
         "dl_freq_high": 1466.9,
         "ul_freq_low": 1447,
@@ -615,10 +615,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 46590) * 0.1 + 1447,
     },
     "B46": {
-        "channel_dl_low": 46790,
-        "channel_dl_high": 43589,
-        "channel_ul_low": 46790,
-        "channel_ul_high": 43589,
+        "dl_channel_low": 46790,
+        "dl_channel_high": 43589,
+        "ul_channel_low": 46790,
+        "ul_channel_high": 43589,
         "dl_freq_low": 5150,
         "dl_freq_high": 4829.9,
         "ul_freq_low": 5150,
@@ -629,10 +629,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 46790) * 0.1 + 5150,
     },
     "B47": {
-        "channel_dl_low": 54540,
-        "channel_dl_high": 55239,
-        "channel_ul_low": 54540,
-        "channel_ul_high": 55239,
+        "dl_channel_low": 54540,
+        "dl_channel_high": 55239,
+        "ul_channel_low": 54540,
+        "ul_channel_high": 55239,
         "dl_freq_low": 5855,
         "dl_freq_high": 5924.9,
         "ul_freq_low": 5855,
@@ -643,10 +643,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 54540) * 0.1 + 5855,
     },
     "B65": {
-        "channel_dl_low": 65536,
-        "channel_dl_high": 66435,
-        "channel_ul_low": 131072,
-        "channel_ul_high": 131971,
+        "dl_channel_low": 65536,
+        "dl_channel_high": 66435,
+        "ul_channel_low": 131072,
+        "ul_channel_high": 131971,
         "dl_freq_low": 2110,
         "dl_freq_high": 2199.9,
         "ul_freq_low": 1920,
@@ -657,10 +657,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 65536) * 0.1 + 2110,
     },
     "B66": {
-        "channel_dl_low": 66436,
-        "channel_dl_high": 67335,
-        "channel_ul_low": 131972,
-        "channel_ul_high": 132871,
+        "dl_channel_low": 66436,
+        "dl_channel_high": 67335,
+        "ul_channel_low": 131972,
+        "ul_channel_high": 132871,
         "dl_freq_low": 2110,
         "dl_freq_high": 2199.9,
         "ul_freq_low": 1710,
@@ -671,10 +671,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 66436) * 0.1 + 2110,
     },
     "B67": {
-        "channel_dl_low": 67336,
-        "channel_dl_high": 67335,
-        "channel_ul_low": None,
-        "channel_ul_high": None,
+        "dl_channel_low": 67336,
+        "dl_channel_high": 67335,
+        "ul_channel_low": None,
+        "ul_channel_high": None,
         "dl_freq_low": 738,
         "dl_freq_high": 737.9,
         "ul_freq_low": None,
@@ -683,10 +683,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 67336) * 0.1 + 738,
     },
     "B69": {
-        "channel_dl_low": 66436,
-        "channel_dl_high": 67335,
-        "channel_ul_low": None,
-        "channel_ul_high": None,
+        "dl_channel_low": 66436,
+        "dl_channel_high": 67335,
+        "ul_channel_low": None,
+        "ul_channel_high": None,
         "dl_freq_low": 2110,
         "dl_freq_high": 2199.9,
         "ul_freq_low": None,
@@ -695,10 +695,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 66436) * 0.1 + 2110,
     },
     "B70": {
-        "channel_dl_low": 68336,
-        "channel_dl_high": 68585,
-        "channel_ul_low": 132472,
-        "channel_ul_high": 132721,
+        "dl_channel_low": 68336,
+        "dl_channel_high": 68585,
+        "ul_channel_low": 132472,
+        "ul_channel_high": 132721,
         "dl_freq_low": 1995,
         "dl_freq_high": 2019.9,
         "ul_freq_low": 1695,
@@ -709,10 +709,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 68336) * 0.1 + 1995,
     },
     "B71": {
-        "channel_dl_low": 68586,
-        "channel_dl_high": 68935,
-        "channel_ul_low": 133122,
-        "channel_ul_high": 133471,
+        "dl_channel_low": 68586,
+        "dl_channel_high": 68935,
+        "ul_channel_low": 133122,
+        "ul_channel_high": 133471,
         "dl_freq_low": 617,
         "dl_freq_high": 651.9,
         "ul_freq_low": 663,
@@ -723,10 +723,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 68586) * 0.1 + 617,
     },
     "B72": {
-        "channel_dl_low": 68936,
-        "channel_dl_high": 68985,
-        "channel_ul_low": 133472,
-        "channel_ul_high": 133521,
+        "dl_channel_low": 68936,
+        "dl_channel_high": 68985,
+        "ul_channel_low": 133472,
+        "ul_channel_high": 133521,
         "dl_freq_low": 461,
         "dl_freq_high": 465.9,
         "ul_freq_low": 451,
@@ -737,10 +737,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 68936) * 0.1 + 461,
     },
     "B75": {
-        "channel_dl_low": 69466,
-        "channel_dl_high": 70315,
-        "channel_ul_low": None,
-        "channel_ul_high": None,
+        "dl_channel_low": 69466,
+        "dl_channel_high": 70315,
+        "ul_channel_low": None,
+        "ul_channel_high": None,
         "dl_freq_low": 1432,
         "dl_freq_high": 1516.9,
         "ul_freq_low": None,
@@ -749,10 +749,10 @@ LTE_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 69466) * 0.1 + 1432,
     },
     "B76": {
-        "channel_dl_low": 70316,
-        "channel_dl_high": 70365,
-        "channel_ul_low": None,
-        "channel_ul_high": None,
+        "dl_channel_low": 70316,
+        "dl_channel_high": 70365,
+        "ul_channel_low": None,
+        "ul_channel_high": None,
         "dl_freq_low": 1427,
         "dl_freq_high": 1431.9,
         "ul_freq_low": None,
@@ -766,10 +766,10 @@ WCDMA_channel_map = {
     # channel interval=0.2MHz
     # band: DL_freq_low,DL_channel_start,DL_channel stop DL-UL freq offset,UL-DL channel offset )
     "B1": {
-        "channel_dl_low": 10562,
-        "channel_dl_high": 10838,
-        "channel_ul_low": 10752,
-        "channel_ul_high": 11028,
+        "dl_channel_low": 10562,
+        "dl_channel_high": 10838,
+        "ul_channel_low": 10752,
+        "ul_channel_high": 11028,
         "dl_freq_low": 2112.4,
         "dl_freq_high": 2140.0,
         "ul_freq_low": 1162.4,
@@ -780,10 +780,10 @@ WCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 10562) * 0.1 + 2112.4,
     },
     "B2": {
-        "channel_dl_low": 9662,
-        "channel_dl_high": 9938,
-        "channel_ul_low": 9742,
-        "channel_ul_high": 10018,
+        "dl_channel_low": 9662,
+        "dl_channel_high": 9938,
+        "ul_channel_low": 9742,
+        "ul_channel_high": 10018,
         "dl_freq_low": 1932.4,
         "dl_freq_high": 1960.0,
         "ul_freq_low": 1532.4,
@@ -794,10 +794,10 @@ WCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9662) * 0.1 + 1932.4,
     },
     "B3": {
-        "channel_dl_low": 1162,
-        "channel_dl_high": 1513,
-        "channel_ul_low": 1257,
-        "channel_ul_high": 1608,
+        "dl_channel_low": 1162,
+        "dl_channel_high": 1513,
+        "ul_channel_low": 1257,
+        "ul_channel_high": 1608,
         "dl_freq_low": 1807.4,
         "dl_freq_high": 1842.5,
         "ul_freq_low": 1582.4,
@@ -808,10 +808,10 @@ WCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 1162) * 0.1 + 1807.4,
     },
     "B4": {
-        "channel_dl_low": 1537,
-        "channel_dl_high": 1738,
-        "channel_ul_low": 1937,
-        "channel_ul_high": 2138,
+        "dl_channel_low": 1537,
+        "dl_channel_high": 1738,
+        "ul_channel_low": 1937,
+        "ul_channel_high": 2138,
         "dl_freq_low": 2112.4,
         "dl_freq_high": 2132.5,
         "ul_freq_low": 1887.4,
@@ -822,10 +822,10 @@ WCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 1537) * 0.1 + 2112.4,
     },
     "B5": {
-        "channel_dl_low": 4357,
-        "channel_dl_high": 4458,
-        "channel_ul_low": 4402,
-        "channel_ul_high": 4503,
+        "dl_channel_low": 4357,
+        "dl_channel_high": 4458,
+        "ul_channel_low": 4402,
+        "ul_channel_high": 4503,
         "dl_freq_low": 871.4,
         "dl_freq_high": 881.5,
         "ul_freq_low": 646.4,
@@ -836,10 +836,10 @@ WCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 4357) * 0.1 + 871.4,
     },
     "B6": {
-        "channel_dl_low": 4387,
-        "channel_dl_high": 4413,
-        "channel_ul_low": 4432,
-        "channel_ul_high": 4458,
+        "dl_channel_low": 4387,
+        "dl_channel_high": 4413,
+        "ul_channel_low": 4432,
+        "ul_channel_high": 4458,
         "dl_freq_low": 877.4,
         "dl_freq_high": 880.0,
         "ul_freq_low": 652.4,
@@ -850,10 +850,10 @@ WCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 4387) * 0.1 + 877.4,
     },
     "B7": {
-        "channel_dl_low": 2237,
-        "channel_dl_high": 2563,
-        "channel_ul_low": 2357,
-        "channel_ul_high": 2683,
+        "dl_channel_low": 2237,
+        "dl_channel_high": 2563,
+        "ul_channel_low": 2357,
+        "ul_channel_high": 2683,
         "dl_freq_low": 2622.4,
         "dl_freq_high": 2655.0,
         "ul_freq_low": 2397.4,
@@ -864,10 +864,10 @@ WCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 2237) * 0.1 + 2622.4,
     },
     "B8": {
-        "channel_dl_low": 2937,
-        "channel_dl_high": 3088,
-        "channel_ul_low": 2982,
-        "channel_ul_high": 3133,
+        "dl_channel_low": 2937,
+        "dl_channel_high": 3088,
+        "ul_channel_low": 2982,
+        "ul_channel_high": 3133,
         "dl_freq_low": 927.4,
         "dl_freq_high": 942.5,
         "ul_freq_low": 702.4,
@@ -883,10 +883,10 @@ TDSCDMA_channel_map = {
     # channel interval=0.2MHz
     # band: DL_freq_low,DL_channel_start,DL_channel stop, DL-UL freq offset,UL-DL channel offset )
     "B34": {
-        "channel_dl_low": 10054,
-        "channel_dl_high": 10121,
-        "channel_ul_low": 10054,
-        "channel_ul_high": 10121,
+        "dl_channel_low": 10054,
+        "dl_channel_high": 10121,
+        "ul_channel_low": 10054,
+        "ul_channel_high": 10121,
         "dl_freq_low": 2010.8,
         "dl_freq_high": 2017.5,
         "ul_freq_low": 2010.8,
@@ -897,10 +897,10 @@ TDSCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 10054) * 0.1 + 2010.8,
     },
     "B35": {
-        "channel_dl_low": 9654,
-        "channel_dl_high": 9946,
-        "channel_ul_low": 9654,
-        "channel_ul_high": 9946,
+        "dl_channel_low": 9654,
+        "dl_channel_high": 9946,
+        "ul_channel_low": 9654,
+        "ul_channel_high": 9946,
         "dl_freq_low": 1930.8,
         "dl_freq_high": 1960.0,
         "ul_freq_low": 1930.8,
@@ -911,10 +911,10 @@ TDSCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9654) * 0.1 + 1930.8,
     },
     "B36": {
-        "channel_dl_low": 9554,
-        "channel_dl_high": 9646,
-        "channel_ul_low": 9554,
-        "channel_ul_high": 9646,
+        "dl_channel_low": 9554,
+        "dl_channel_high": 9646,
+        "ul_channel_low": 9554,
+        "ul_channel_high": 9646,
         "dl_freq_low": 1910.8,
         "dl_freq_high": 1920.0,
         "ul_freq_low": 1910.8,
@@ -925,10 +925,10 @@ TDSCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 9554) * 0.1 + 1910.8,
     },
     "B37": {
-        "channel_dl_low": 12854,
-        "channel_dl_high": 13096,
-        "channel_ul_low": 12854,
-        "channel_ul_high": 13096,
+        "dl_channel_low": 12854,
+        "dl_channel_high": 13096,
+        "ul_channel_low": 12854,
+        "ul_channel_high": 13096,
         "dl_freq_low": 2570.8,
         "dl_freq_high": 2595.0,
         "ul_freq_low": 2570.8,
@@ -939,10 +939,10 @@ TDSCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 12854) * 0.1 + 2570.8,
     },
     "B38": {
-        "channel_dl_low": 11504,
-        "channel_dl_high": 11996,
-        "channel_ul_low": 11504,
-        "channel_ul_high": 11996,
+        "dl_channel_low": 11504,
+        "dl_channel_high": 11996,
+        "ul_channel_low": 11504,
+        "ul_channel_high": 11996,
         "dl_freq_low": 2300.8,
         "dl_freq_high": 2350.0,
         "ul_freq_low": 2300.8,
@@ -953,10 +953,10 @@ TDSCDMA_channel_map = {
         "channel2freq_dl": lambda channel: (channel - 11504) * 0.1 + 2300.8,
     },
     "B39": {
-        "channel_dl_low": 9404,
-        "channel_dl_high": 9596,
-        "channel_ul_low": 9404,
-        "channel_ul_high": 9596,
+        "dl_channel_low": 9404,
+        "dl_channel_high": 9596,
+        "ul_channel_low": 9404,
+        "ul_channel_high": 9596,
         "dl_freq_low": 1880.8,
         "dl_freq_high": 1900.0,
         "ul_freq_low": 1880.8,
@@ -1008,7 +1008,15 @@ CDMA_channel_map = {
 }
 
 GSM_channel_map = {
-    "850": list(range(128, 252)),
+    "850": {
+        "channel_range":list(range(128, 252)),
+        "freq_range_dl":1,
+        "freq_range_ul":1,
+        "freq2channel_dl": lambda f:f/824.2/0.2+128,
+        "freq2channel_ul": lambda f:f/824.2/0.2+128,
+        "channel2freq_dl": lambda n:824.2 + 0.2*(n-128),
+        "channel2freq_ul": lambda n:824.2 + 0.2*(n-128),
+    },
     "900": list(range(0, 125)) + list(range(975, 1024)),
     "1800": list(range(512, 886)),
     "1900": list(range(512, 811)),
@@ -1034,54 +1042,119 @@ predefined_channel = {
 def freq2channel(tech, band, freq_dl=0,freq_ul=0) :
     # band: DL_freq_low,DL_channel_start,DL_channel stop, DL-UL freq offset,UL-DL channel offset
     def LTE_channel(band,freq_dl=0,freq_ul=0):
-        ret_val={
-            "band":"",
-            "channel dl":"",
-            "channel ul":"",
-            "freq dl":"",
-            "freq ul":"",
-        }
-        ret_val["band"]=band
+        ret_val=["","","","",""]
+        ret_val[0]=band
         if freq_dl:
-            ret_val["freq dl"]=freq_dl
-            ret_val["freq ul"]=freq_dl-(LTE_channel_map["dl_freq_low"]-LTE_channel_map["ul_freq_low"])
-            ret_val["channel dl"]=LTE_channel_map["freq2channel_dl"](freq_dl)
-            ret_val["channel ul"]=ret_val["channel dl"]-(LTE_channel_map["channel_dl_low"]-LTE_channel_map["channel_ul_low"])
+            ret_val[3]=round(freq_dl,11)
+            ret_val[4]=round(freq_dl-(LTE_channel_map[band]["dl_freq_low"]-LTE_channel_map[band]["ul_freq_low"]),11)
+            ret_val[1]=int(LTE_channel_map[band]["freq2channel_dl"](freq_dl))
+            ret_val[2]=int(ret_val[1]-(LTE_channel_map[band]["dl_channel_low"]-LTE_channel_map[band]["ul_channel_low"]))
         elif freq_ul:
-            ret_val["freq ul"] = freq_ul
-            ret_val["freq dl"] = freq_ul+((LTE_channel_map["dl_freq_low"]-LTE_channel_map["ul_freq_low"]))
-            ret_val["channel ul"] = LTE_channel_map["freq2channel_ul"](freq_ul)
-            ret_val["channel dl"] = ret_val["channel ul"] + (
-                        LTE_channel_map["channel_dl_low"] - LTE_channel_map["channel_ul_low"])
+            ret_val[4] = round(freq_ul,11)
+            ret_val[3] = round(freq_ul+((LTE_channel_map[band]["dl_freq_low"]-LTE_channel_map[band]["ul_freq_low"])),11)
+            ret_val[2] = int(LTE_channel_map[band]["freq2channel_ul"](freq_ul))
+            ret_val[1] = int(ret_val[2] + (
+                        LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_channel_low"]))
         return ret_val
 
     def WCDMA_channel(tech, band, freq_dl=0,freq_ul=0):
-        pass
+        ret_val = ["", "", "", "", ""]
+        ret_val[0] = band
+        if freq_dl:
+            ret_val[3] = round(freq_dl,11)
+            ret_val[4] = round(freq_dl - (WCDMA_channel_map[band]["dl_freq_low"] - WCDMA_channel_map[band]["ul_freq_low"]),11)
+            ret_val[1] = int(WCDMA_channel_map[band]["freq2channel_dl"](freq_dl))
+            ret_val[2] = int(
+                ret_val[1] - (WCDMA_channel_map[band]["dl_channel_low"] - WCDMA_channel_map[band]["ul_channel_low"]))
+        elif freq_ul:
+            ret_val[4] = round(freq_ul,11)
+            ret_val[3] = round(freq_ul + ((WCDMA_channel_map[band]["dl_freq_low"] - WCDMA_channel_map[band]["ul_freq_low"])),11)
+            ret_val[2] = int(WCDMA_channel_map[band]["freq2channel_ul"](freq_ul))
+            ret_val[1] = int(ret_val[2] + (
+                WCDMA_channel_map[band]["dl_channel_low"] - WCDMA_channel_map[band]["ul_channel_low"]))
+        return ret_val
 
     def TDSCDMA_channel(tech, band, freq_dl=0,freq_ul=0):
-        pass
+        ret_val = ["", "", "", "", ""]
+        ret_val[0] = band
+        if freq_dl:
+            ret_val[3] = round(freq_dl,11)
+            ret_val[4] = round(freq_dl - (TDSCDMA_channel_map[band]["dl_freq_low"] - TDSCDMA_channel_map[band]["ul_freq_low"]),11)
+            ret_val[1] = int(TDSCDMA_channel_map[band]["freq2channel_dl"](freq_dl))
+            ret_val[2] = int(
+                ret_val[1] - (TDSCDMA_channel_map[band]["dl_channel_low"] - TDSCDMA_channel_map[band]["ul_channel_low"]))
+        elif freq_ul:
+            ret_val[4] = round(freq_ul,11)
+            ret_val[3] = round(freq_ul + ((TDSCDMA_channel_map[band]["dl_freq_low"] - TDSCDMA_channel_map[band]["ul_freq_low"])),11)
+            ret_val[2] = int(TDSCDMA_channel_map[band]["freq2channel_ul"](freq_ul))
+            ret_val[1] = int(ret_val[2] + (
+                TDSCDMA_channel_map[band]["dl_channel_low"] - TDSCDMA_channel_map[band]["ul_channel_low"]))
+        return ret_val
 
     def CDMA_channel(tech, band, freq_dl=0,freq_ul=0):
+        # ret_val = ["", "", "", "", ""]
+        # ret_val[0] = band
+        # if freq_dl:
+        #     ret_val[3] = freq_dl
+        #     ret_val[4] = freq_dl - (CDMA_channel_map[band]["dl_freq_low"] - CDMA_channel_map[band]["ul_freq_low"])
+        #     ret_val[1] = int(CDMA_channel_map[band]["freq2channel_dl"](freq_dl))
+        #     ret_val[2] = int(
+        #         ret_val[1] - (CDMA_channel_map[band]["dl_channel_low"] - CDMA_channel_map[band]["ul_channel_low"]))
+        # elif freq_ul:
+        #     ret_val[4] = freq_ul
+        #     ret_val[3] = freq_ul + ((CDMA_channel_map[band]["dl_freq_low"] - CDMA_channel_map[band]["ul_freq_low"]))
+        #     ret_val[2] = int(CDMA_channel_map[band]["freq2channel_ul"](freq_ul))
+        #     ret_val[1] = int(ret_val[2] + (
+        #         CDMA_channel_map[band]["dl_channel_low"] - CDMA_channel_map[band]["ul_channel_low"]))
+        # return ret_val
         pass
 
     def GSM_channel(tech, band, freq_dl=0,freq_ul=0):
-        pass
+        ret_val = ["", "", "", "", ""]
+        ret_val[0] = band
+        if freq_dl:
+            ret_val[3] = round(freq_dl, 11)
+            ret_val[4] = round(freq_dl, 11)
+            ret_val[1] = int(TDSCDMA_channel_map[band]["freq2channel_dl"](freq_dl))
+            ret_val[2] = int(TDSCDMA_channel_map[band]["freq2channel_dl"](freq_dl))
+        elif freq_ul:
+            ret_val[4] = round(freq_ul, 11)
+            ret_val[3] = round(freq_ul, 11)
+            ret_val[2] = int(TDSCDMA_channel_map[band]["freq2channel_ul"](freq_ul))
+            ret_val[1] = int(TDSCDMA_channel_map[band]["freq2channel_ul"](freq_ul))
+        return ret_val
 
     def WIFI_channel(tech, band, freq_dl=0,freq_ul=0):
-        pass
+        ret_val = ["", "", "", "", ""]
+        ret_val[0] = band
+        if freq_dl:
+            ret_val[3] = freq_dl
+            ret_val[4] = freq_dl - (LTE_channel_map[band]["dl_freq_low"] - LTE_channel_map[band]["ul_freq_low"])
+            ret_val[1] = int(LTE_channel_map[band]["freq2channel_dl"](freq_dl))
+            ret_val[2] = int(
+                ret_val[1] - (LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_channel_low"]))
+        elif freq_ul:
+            ret_val[4] = freq_ul
+            ret_val[3] = freq_ul + ((LTE_channel_map[band]["dl_freq_low"] - LTE_channel_map[band]["ul_freq_low"]))
+            ret_val[2] = int(LTE_channel_map[band]["freq2channel_ul"](freq_ul))
+            ret_val[1] = int(ret_val[2] + (
+                LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_channel_low"]))
+        return ret_val
     # process all the parameters passed by.
     tech=tech.upper()
-
-    if type(band) is str:
-        band=band.upper()
-        if re.match("^B\d+",band):
-            band=band
-        elif re.match("^B(\d+)",band):
-            band="B{}".format(re.match("^B(\d+)",band).group(1))
-    if type(band) in [int,float]:
-        band="B{}".format(band)
-
+    freq_ul=float(freq_ul)
+    freq_dl=float(freq_dl)
     if tech.upper()=="LTE":
+        if type(band) is str:
+            band = band.upper()
+            if re.match("^B\d+", band):
+                band = band
+            elif re.match("^BAND(\d+)", band):
+                band = "B{}".format(re.match("^BAND(\d+)", band).group(1))
+            elif re.match("^\d+$", band):
+                band = "B{}".format(band)
+        elif type(band) is int or type(band) is float:
+            band = "B{}".format(band)
         return LTE_channel(band,freq_dl,freq_ul)
     if tech.upper()=="WCDMA":
         return WCDMA_channel(band,freq_dl,freq_ul)
@@ -1090,28 +1163,95 @@ def freq2channel(tech, band, freq_dl=0,freq_ul=0) :
     if tech.upper()=="CDMA":
         return CDMA_channel(band,freq_dl,freq_ul)
     if tech.upper()=="GSM":
+        band = band.upper()
+        if type(band) is str:
+            if re.match("^GSM(\d+)", band):
+                band = re.match("^GSM(\d+)", band).group(1)
+            elif "DCS"in band:
+                band="1800"
+            elif "PCS"in band:
+                band="1900"
+            elif re.match("^\d+$", band):
+                band = band
+        elif type(band) is int or type(band) is float:
+            band=str(int(band))
         return GSM_channel(band,freq_dl,freq_ul)
     if tech.upper()=="WIFI":
-        return LTE_channel(band,freq_dl,freq_ul)
+        return WIFI_channel(band,freq_dl,freq_ul)
 
-def channel2freq(tech: str, band: str, channel: str):
+def channel2freq(tech, band, channel_dl=0,channel_ul=0):
     def LTE_freq(tech: str, band: str, freq: str) -> dict:
+        ret_val = ["", "", "", "", ""]
+        ret_val[0] = band
+        if channel_dl:
+            ret_val[1] = round(channel_dl, 11)
+            ret_val[2] = round(channel_dl - (LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_freq_low"]),
+                               11)
+            ret_val[3] = int(LTE_channel_map[band]["channel2freq_dl"](channel_dl))
+            ret_val[4] = int(
+                ret_val[1] - (LTE_channel_map[band]["dl_freq_low"] - LTE_channel_map[band]["ul_freq_low"]))
+        elif channel_ul:
+            ret_val[2] = round(channel_ul, 11)
+            ret_val[1] = round(
+                channel_ul + ((LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_channel_low"])), 11)
+            ret_val[4] = int(LTE_channel_map[band]["channel2freq_ul"](channel_ul))
+            ret_val[3] = int(ret_val[2] + (
+                LTE_channel_map[band]["dl_freq_low"] - LTE_channel_map[band]["ul_freq_low"]))
+        return ret_val
+
+    def WCDMA_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
         pass
 
-    def WCDMA_freq(tech: str, band: str, freq: str) -> dict:
+    def TDSCDMA_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
         pass
 
-    def TDSCDMA_freq(tech: str, band: str, freq: str) -> dict:
+    def CDMA_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
         pass
 
-    def CDMA200_freq(tech: str, band: str, freq: str) -> dict:
+    def GSM_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
         pass
 
-    def GSM_freq(tech: str, band: str, freq: str) -> dict:
+    def WIFI_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
         pass
 
-    def WIFI_freq(tech: str, band: str, freq: str) -> dict:
-        pass
+    tech = tech.upper()
+    freq_ul = float(channel_ul)
+    freq_dl = float(channel_dl)
+    if tech.upper() == "LTE":
+        if type(band) is str:
+            band = band.upper()
+            if re.match("^B\d+", band):
+                band = band
+            elif re.match("^BAND(\d+)", band):
+                band = "B{}".format(re.match("^BAND(\d+)", band).group(1))
+            elif re.match("^\d+$", band):
+                band = "B{}".format(band)
+        elif type(band) is int or type(band) is float:
+            band = "B{}".format(band)
+        return LTE_freq(band, freq_dl, freq_ul)
+    if tech.upper() == "WCDMA":
+        return WCDMA_freq(band, freq_dl, freq_ul)
+    if tech.upper() == "TDSCDMA":
+        return TDSCDMA_freq(band, freq_dl, freq_ul)
+    if tech.upper() == "CDMA":
+        return CDMA_freq(band, freq_dl, freq_ul)
+    if tech.upper() == "GSM":
+        band = band.upper()
+        if type(band) is str:
+            if re.match("^GSM(\d+)", band):
+                band = re.match("^GSM(\d+)", band).group(1)
+            elif "DCS" in band:
+                band = "1800"
+            elif "PCS" in band:
+                band = "1900"
+            elif re.match("^\d+$", band):
+                band = band
+        elif type(band) is int or type(band) is float:
+            band = str(int(band))
+        return GSM_freq(band, freq_dl, freq_ul)
+    if tech.upper() == "WIFI":
+        return WIFI_freq(band, freq_dl, freq_ul)
+
 
 
 def get_LTE_offset_by_RB_setting(bandwidth,rb_start,rb_stop):
@@ -1121,8 +1261,7 @@ def get_tech_and_channels_by_freq(freq):
     pass
 
 if __name__ == '__main__':
-    print(LTE_channel_map["B1"]["channel2freq_ul"](18000))
-    print(LTE_channel_map["B1"]["channel2freq_dl"](0))
-    print(CDMA_channel_map["BC0"]["channel2freq_dl"](1))
-    print(CDMA_channel_map["BC0"]["channel2freq_ul"](1))
-    print(freq2channel())
+    print(freq2channel("LTE","1",2110))
+    print(channel2freq("LTE",1,300))
+    print((lambda n:824.2 + 0.2*(n-128))(128))
+    print((lambda n:824.2 + 0.2*(n-128))(251))
