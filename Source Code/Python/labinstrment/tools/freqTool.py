@@ -1179,44 +1179,43 @@ def freq2channel(tech, band, freq_dl=0,freq_ul=0) :
     if tech.upper()=="WIFI":
         return WIFI_channel(band,freq_dl,freq_ul)
 
-def channel2freq(tech, band, channel_dl=0,channel_ul=0):
-    def LTE_freq(tech: str, band: str, freq: str) -> dict:
+def channel2freq(tech,band, channel_dl=0, channel_ul=0):
+    def LTE_freq(band, channel_dl=0, channel_ul=0) :
+        print(band,channel_dl)
         ret_val = ["", "", "", "", ""]
         ret_val[0] = band
         if channel_dl:
-            ret_val[1] = round(channel_dl, 11)
-            ret_val[2] = round(channel_dl - (LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_freq_low"]),
-                               11)
-            ret_val[3] = int(LTE_channel_map[band]["channel2freq_dl"](channel_dl))
-            ret_val[4] = int(
-                ret_val[1] - (LTE_channel_map[band]["dl_freq_low"] - LTE_channel_map[band]["ul_freq_low"]))
+            ret_val[1] = int(channel_dl)
+            ret_val[2] = int(channel_dl - (LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_channel_low"]))
+            ret_val[3] = round(LTE_channel_map[band]["channel2freq_dl"](channel_dl),11)
+            ret_val[4] = round(
+                ret_val[3] - (LTE_channel_map[band]["dl_freq_low"] - LTE_channel_map[band]["ul_freq_low"]),11)
         elif channel_ul:
-            ret_val[2] = round(channel_ul, 11)
-            ret_val[1] = round(
-                channel_ul + ((LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_channel_low"])), 11)
-            ret_val[4] = int(LTE_channel_map[band]["channel2freq_ul"](channel_ul))
-            ret_val[3] = int(ret_val[2] + (
-                LTE_channel_map[band]["dl_freq_low"] - LTE_channel_map[band]["ul_freq_low"]))
+            ret_val[2] = int(channel_ul)
+            ret_val[1] = int(channel_ul + ((LTE_channel_map[band]["dl_channel_low"] - LTE_channel_map[band]["ul_channel_low"])))
+            ret_val[4] = round(LTE_channel_map[band]["channel2freq_ul"](channel_ul),11)
+            ret_val[3] = round(ret_val[4] + (
+                LTE_channel_map[band]["dl_freq_low"] - LTE_channel_map[band]["ul_freq_low"]),11)
         return ret_val
 
-    def WCDMA_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
+    def WCDMA_freq(band, channel_dl=0, channel_ul=0) :
         pass
 
-    def TDSCDMA_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
+    def TDSCDMA_freq(band, channel_dl=0, channel_ul=0) :
         pass
 
-    def CDMA_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
+    def CDMA_freq(band, channel_dl=0, channel_ul=0) :
         pass
 
-    def GSM_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
+    def GSM_freq(band, channel_dl=0, channel_ul=0) :
         pass
 
-    def WIFI_freq(tech, band, channel_dl=0,channel_ul=0) -> dict:
+    def WIFI_freq(band, channel_dl=0, channel_ul=0) :
         pass
 
     tech = tech.upper()
-    freq_ul = float(channel_ul)
-    freq_dl = float(channel_dl)
+    channel_dl = float(channel_dl)
+    channel_ul = float(channel_ul)
     if tech.upper() == "LTE":
         if type(band) is str:
             band = band.upper()
@@ -1228,13 +1227,13 @@ def channel2freq(tech, band, channel_dl=0,channel_ul=0):
                 band = "B{}".format(band)
         elif type(band) is int or type(band) is float:
             band = "B{}".format(band)
-        return LTE_freq(band, freq_dl, freq_ul)
+        return LTE_freq(band, channel_dl, channel_ul)
     if tech.upper() == "WCDMA":
-        return WCDMA_freq(band, freq_dl, freq_ul)
+        return WCDMA_freq(band, channel_dl, channel_ul)
     if tech.upper() == "TDSCDMA":
-        return TDSCDMA_freq(band, freq_dl, freq_ul)
+        return TDSCDMA_freq(band, channel_dl, channel_ul)
     if tech.upper() == "CDMA":
-        return CDMA_freq(band, freq_dl, freq_ul)
+        return CDMA_freq(band, channel_dl, channel_ul)
     if tech.upper() == "GSM":
         band = band.upper()
         if type(band) is str:
@@ -1248,9 +1247,9 @@ def channel2freq(tech, band, channel_dl=0,channel_ul=0):
                 band = band
         elif type(band) is int or type(band) is float:
             band = str(int(band))
-        return GSM_freq(band, freq_dl, freq_ul)
+        return GSM_freq(band, channel_dl, channel_ul)
     if tech.upper() == "WIFI":
-        return WIFI_freq(band, freq_dl, freq_ul)
+        return WIFI_freq(band, channel_dl, channel_ul)
 
 
 

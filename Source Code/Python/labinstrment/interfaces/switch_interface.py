@@ -25,10 +25,3 @@ class SwitchInterface():
     def close_multiple(self):
         pass
 
-    @abc.abstractmethod
-    @abc.abstractmethod
-    @abc.abstractmethod
-    @abc.abstractmethod
-    @abc.abstractmethod
-    @abc.abstractmethod
-    @abc.abstractmethod
