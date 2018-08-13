@@ -1,0 +1,1 @@
+from .CMW500_WIFI.CMW500_WIFI import CMW_WIFI
