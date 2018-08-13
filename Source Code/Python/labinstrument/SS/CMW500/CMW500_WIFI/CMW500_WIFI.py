@@ -672,25 +672,38 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         ret_val['rx_mix_level_offset'] = self.rx_mix_level_offset
         return ret_val
 
-    def __set_RF_setting_status(self):
-        pass
+    def __set_RF_setting_status(self, value):
+        self.freq = value['freq']
+        self.channel = value['channel']
+        self.tx_power = value['tx_power']
+        self.pep_power = value['pep_power']
+        self.operation_mode = value['operation_mode']
+        self.standard = value['standard']
+        self.bandwidth = value['bandwidth']
+        self.beacon_interval = value['beacon_interval']
+        self.senario = value['senario']
+        self.mimo_path = value['mimo_path']
+        self.path = value['path']
+        self.input_attanuation = value['input_attanuation']
+        self.output_attanuation = value['output_attanuation']
+        self.rx_mix_level_offset = value['rx_mix_level_offset']
 
     def __get_connection_status(self):
         pass
 
-    def __set_connection_status(self):
-        pass
+    def __set_connection_status(self,value):
+        self.dim
 
     def __get_trigger_status(self):
         pass
 
-    def __set_trigger_status(self):
+    def __set_trigger_status(self,value):
         pass
 
     def __get_ip_status(self):
         pass
 
-    def __set_ip_status(self):
+    def __set_ip_status(self,value):
         pass
 
     # ____________________________Properties____________________________

@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name='labinstrument',
-    version   = '0.0.4',
+    version    = '0.0.5',
     description='''This is a package for Communication lab instrument romote control''',
     long_description=long_description,
     author='adair',
@@ -19,7 +19,7 @@ setup(
     url='not prepared yet',
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GPL License",
         "Operating System :: OS Independent",
     ],
 )
