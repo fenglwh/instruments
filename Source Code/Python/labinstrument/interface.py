@@ -2,7 +2,7 @@
 # coding:utf-8
 __Author__ = 'Adair.l'
 import abc
-from Program.tools.buildin_ex import *
+from labinstrument.tools.buildin_ex import *
 import json
 import os
 

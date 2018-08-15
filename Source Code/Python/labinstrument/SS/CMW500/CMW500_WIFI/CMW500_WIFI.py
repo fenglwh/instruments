@@ -689,10 +689,12 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         self.rx_mix_level_offset = value['rx_mix_level_offset']
 
     def __get_connection_status(self):
-        pass
+        ret_val = {}
+
+        return ret_val
 
     def __set_connection_status(self,value):
-        self.dim
+        pass
 
     def __get_trigger_status(self):
         pass
