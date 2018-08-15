@@ -13,6 +13,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         self.GTL()
 
     # signalling
+
     def __set_signalling_state(self, state):
         self.write('SOURce:WLAN:SIGN<i>:STATe {}'.replace('<i>', str(self.signalling_No)).format(state))
 
@@ -116,13 +117,6 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         return str(eval(
             self.query('CONFigure:WLAN:SIGN<i>:RFSettings:BWIDth?'.replace('<i>', str(self.signalling_No)))) / 1000000)
 
-    def __set_beacon_interval(self, interval):
-        self.write(
-            'CONFigure:WLAN:SIGN<i>:CONNection:BEACon {}'.format(interval).replace('<i>', str(self.signalling_No)))
-
-    def __get_beacon_interval(self):
-        return self.query('CONFigure:WLAN:SIGN<i>:CONNection:BEACon?'.replace('<i>', str(self.signalling_No)))
-
     def __set_senario(self, senario):
         self.write('ROUTe:WLAN:SIGN<i>:SCENario {}'.format(senario).replace('<i>', str(self.signalling_No)))
 
@@ -199,6 +193,13 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
 
     # connection
 
+    def __set_beacon_interval(self, interval):
+        self.write(
+            'CONFigure:WLAN:SIGN<i>:CONNection:BEACon {}'.format(interval).replace('<i>', str(self.signalling_No)))
+
+    def __get_beacon_interval(self):
+        return self.query('CONFigure:WLAN:SIGN<i>:CONNection:BEACon?'.replace('<i>', str(self.signalling_No)))
+
     def __set_dim_period(self, value):
         self.write('CONFigure:WLAN:SIGN<i>:CONNection:DPERiod {}'.format(value).replace('<i>', str(self.signalling_No)))
 
@@ -216,6 +217,19 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
 
     def __get_SSID(self):
         return self.query('CONFigure:WLAN:SIGN<i>:CONNection:SSID?'.replace('<i>', str(self.signalling_No)))
+
+    def __set_country_code_config(self,country_code_settings):
+        # should as format US,1,13,0
+        self.write('CONF:WLAN:SIGN<i>:CONN:CCODe:CCConf {}'.format(country_code_settings).replace('<i>', str(self.signalling_No)))
+
+    def __get_country_code_config(self):
+        return self.query('CONF:WLAN:SIGN<i>:CONN:CCODe:CCConf '.replace('<i>', str(self.signalling_No)))
+
+    def __set_country_code_state(self,country_code_state):
+        self.write('CONF:WLAN:SIGN<i>:CONN:CCODe:CCCS {}'.format(country_code_state).replace('<i>', str(self.signalling_No)))
+
+    def __get_country_code_state(self):
+        return self.query('CONF:WLAN:SIGN<i>:CONN:CCODe:CCCS?').replace('<i>', str(self.signalling_No))
 
     def __set_WIFI_direct_authentication_type(self, authentication_type):
         self.write('CONFigure:WLAN:SIGN<i>:CONNection:WDIRect:ATYPe {}'.format(authentication_type).replace('<i>', str(
@@ -540,6 +554,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         return self.query('CONFigure:WLAN:SIGN<i>:PGEN:UPORts?'.replace('<i>', str(self.signalling_No)))
 
     # tx test
+
     def init_tx_measurement(self):
         self.write('INITiate:WLAN:MEAS<i>:MEValuation'.replace('<i>', str(self.signalling_No)))
 
@@ -635,7 +650,8 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     def get_IP_address(self):
         return self.query('SENSe:WLAN:SIGN<i>:UESinfo:UEADdress:IPV<n>?'.replace('<i>', str(self.signalling_No)))
 
-    # all status
+    # config ,all status this part should be changable when operation mode changes
+
     def __get_all_status(self):
         pass
 
@@ -656,15 +672,14 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
 
     def __get_RF_setting_status(self):
         ret_val = {}
+        ret_val['senario'] = self.senario
+        ret_val['operation_mode'] = self.operation_mode
+        ret_val['standard'] = self.standard
         ret_val['freq'] = self.freq
         ret_val['channel'] = self.channel
         ret_val['tx_power'] = self.tx_power
         ret_val['pep_power'] = self.pep_power
-        ret_val['operation_mode'] = self.operation_mode
-        ret_val['standard'] = self.standard
         ret_val['bandwidth'] = self.bandwidth
-        ret_val['beacon_interval'] = self.beacon_interval
-        ret_val['senario'] = self.senario
         ret_val['mimo_path'] = self.mimo_path
         ret_val['path'] = self.path
         ret_val['input_attanuation'] = self.input_attanuation
@@ -673,43 +688,65 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         return ret_val
 
     def __set_RF_setting_status(self, value):
-        self.freq = value['freq']
-        self.channel = value['channel']
-        self.tx_power = value['tx_power']
-        self.pep_power = value['pep_power']
-        self.operation_mode = value['operation_mode']
-        self.standard = value['standard']
-        self.bandwidth = value['bandwidth']
-        self.beacon_interval = value['beacon_interval']
-        self.senario = value['senario']
-        self.mimo_path = value['mimo_path']
-        self.path = value['path']
-        self.input_attanuation = value['input_attanuation']
-        self.output_attanuation = value['output_attanuation']
-        self.rx_mix_level_offset = value['rx_mix_level_offset']
+        pass
 
     def __get_connection_status(self):
         ret_val = {}
-
+        ret_val['beacon_interval'] = self.beacon_interval
+        ret_val['dim_period'] = self.dim_period
+        ret_val['BSSID'] = self.BSSID
+        ret_val['SSID'] = self.SSID
+        ret_val['country_code_config'] = self.country_code_config
+        ret_val['country_code_state'] = self.country_code_state
+        ret_val['WIFI_direct_authentication_type'] = self.WIFI_direct_authentication_type
+        ret_val['WIFI_direct_config'] = self.WIFI_direct_config
+        ret_val['uddrate_mode'] = self.uddrate_mode
+        ret_val['DSSS_rate'] = self.DSSS_rate
+        ret_val['OFDM_rate'] = self.OFDM_rate
+        ret_val['OMCS_rate'] = self.OMCS_rate
+        ret_val['MFR_control_rate'] = self.MFR_control_rate
+        ret_val['DFR_control_rate'] = self.DFR_control_rate
+        ret_val['rx_filter'] = self.rx_filter
+        ret_val['security_type'] = self.security_type
+        ret_val['security_encrypt_type'] = self.security_encrypt_type
         return ret_val
 
     def __set_connection_status(self,value):
         pass
 
     def __get_trigger_status(self):
-        pass
+        ret_val = {}
+        ret_val['tx_mac_frame_trigger'] = self.tx_mac_frame_trigger
+        ret_val['tx_mac_frame_pulse_length_mode'] = self.tx_mac_frame_pulse_length_mode
+        ret_val['tx_mac_frame_pulse_length_value'] = self.tx_mac_frame_pulse_length_value
+        ret_val['rx_mac_frame_trigger'] = self.rx_mac_frame_trigger
+        ret_val['rx_mac_frame_mode'] = self.rx_mac_frame_mode
+        ret_val['rx_mac_frame_pulse_length_mode'] = self.rx_mac_frame_pulse_length_mode
+        ret_val['rx_mac_frame_pulse_length_value'] = self.rx_mac_frame_pulse_length_value
+        ret_val['rx_mac_frame_min_length'] = self.rx_mac_frame_min_length
+        return ret_val
 
     def __set_trigger_status(self,value):
         pass
 
     def __get_ip_status(self):
-        pass
+        ret_val = {}
+        ret_val['IP_version'] = self.IP_version
+        ret_val['IPV4_stack'] = self.IPV4_stack
+        ret_val['IPV4_destination'] = self.IPV4_destination
+        ret_val['IPV4_subnet_mask'] = self.IPV4_subnet_mask
+        ret_val['IPV4_gateway'] = self.IPV4_gateway
+        ret_val['IPV4_DNS'] = self.IPV4_DNS
+        ret_val['IPV4_DHCP'] = self.IPV4_DHCP
+        ret_val['BIPV6_prefix'] = self.IPV6_prefix
+        return ret_val
 
     def __set_ip_status(self,value):
         pass
 
     # ____________________________Properties____________________________
-    # IDLE   PROB     AUTH            ASS          DEA               DIS             CTIMeout
+    #  IDLE   PROB     AUTH            ASS          DEA               DIS             CTIMeout
+    # rfsetting
     signal_state = property(__get_signalling_state, __set_signalling_state)
     freq = property(__get_freq, __set_freq)
     channel = property(__get_channel, __set_channel)
@@ -719,7 +756,6 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     operation_mode = property(__get_operation_mode, __set_operation_mode)
     standard = property(__get_standard, __set_standard)
     bandwidth = property(__get_bandwidth, __set_bandwidth)
-    beacon_interval = property(__get_beacon_interval, __set_beacon_interval)
     senario = property(__get_senario, __set_senario)
     path = property(__get_path, __set_path)
     mimo_path = property(__get_mimo_path, __set_mimo_path)
@@ -728,7 +764,15 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     rx_mix_level_offset = property(__get_RX_mix_level_offset, __set_RX_mix_level_offset)
     tx_MIMO_mode = property(__get_tx_MIMO_mode, __set_tx_MIMO_mode)
     tx_MIMO_CSD = property(__get_tx_MIMO_CSD, __set_tx_MIMO_CSD)
-
+    #connection
+    beacon_interval = property(__get_beacon_interval, __set_beacon_interval)
+    dim_period=property(__get_dim_period,__set_dim_period)
+    BSSID=property(__get_BSSID,__set_BSSID)
+    SSID=property(__get_SSID,__set_SSID)
+    country_code_config=property(__get_country_code_config,__set_country_code_config)
+    country_code_state=property(__get_country_code_state,__set_country_code_state)
+    WIFI_direct_authentication_type=property(__get_WIFI_direct_authentication_type,__set_WIFI_direct_authentication_type)
+    WIFI_direct_config=property(__get_WIFI_direct_config,__set_WIFI_direct_config)
     uddrate_mode = property(__get_uddrate_mode, __set_uddrate_mode)
     DSSS_rate = property(__get_DSSS_rate, __set_DSSS_rate)
     OFDM_rate = property(__get_OFDM_rate, __set_OFDM_rate)
@@ -736,8 +780,10 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     MFR_control_rate = property(__get_MFR_control_rate, __set_MFR_control_rate)
     DFR_control_rate = property(__get_DFR_control_rate, __set_DFR_control_rate)
     rx_filter = property(__get_rx_filter, __set_rx_filter)
+    # ap
     connection_mode = property(__get_connection_mode, __set_connection_mode)
     SSID_connection = property(__get_SSID_connection, __set_SSID_connection)
+    #ap done
     security_type = property(__get_security_type, __set_security_type)
     security_encrypt_type = property(__get_security_encrypt_type, __set_security_encrypt_type)
     WPS_authentication_type = property(__get_WPS_authentication_type, __set_WPS_authentication_type)
@@ -755,7 +801,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     rx_mac_frame_trigger = property(__get_rx_mac_frame_trigger, __set_rx_mac_frame_trigger)
     tx_mac_frame_pulse_length_mode = property(__get_tx_mac_frame_pulse_length_mode,
                                               __set_tx_mac_frame_pulse_length_mode)
-    mac_frame_pulse_length_value = property(__get_tx_mac_frame_pulse_length_value,
+    tx_mac_frame_pulse_length_value = property(__get_tx_mac_frame_pulse_length_value,
                                             __set_tx_mac_frame_pulse_length_value)
     rx_mac_frame_mode = property(__get_rx_mac_frame_mode, __set_rx_mac_frame_mode)
     rx_mac_frame_min_length = property(__get_rx_mac_frame_min_length, __set_rx_mac_frame_min_length)
@@ -782,9 +828,15 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     RX_data_interval = property(__get_data_interval, __set_data_interval)
     RX_payload_size = property(__get_payload_size, __set_payload_size)
     RX_PER_limit = property(__get_PER_limit, __set_PER_limit)
+
     # ___________________________________________________________
 
     RF_setting_status = property(__get_RF_setting_status, __set_RF_setting_status)
+    connection_setting_status=property(__get_connection_status,__set_connection_status)
+    trigger_setting_status=property(__get_trigger_status,__set_trigger_status)
+    packet_generator_setting_status=property(__get_packet_generator_status,__set_packet_generatot_status)
+    ip_setting_status=property(__get_ip_status,__set_ip_status)
+
 
     def set_parameters(self, parameter):
         pass
