@@ -98,7 +98,7 @@ class SnapShot:
         :param param: name of sav file, should be anything any type you want
         :return: None 
         """
-        file_path = os.path.join(__file__, 'config', str(param) + '.sav')
+        file_path = os.path.join(os.path.dirname(__file__), 'config', str(param) + '.sav')
         with open(file_path, 'w') as f:
             f.write(json.dumps(self.get_parameters()))
 
@@ -109,7 +109,7 @@ class SnapShot:
         :param param: name of sav file, should be anything any type you want
         :return: None
         """
-        file_path = os.path.join(__file__, 'config', str(param) + '.sav')
+        file_path = os.path.join(os.path.dirname(__file__), 'config', str(param) + '.sav')
         with open(file_path, 'r') as f:
             self.set_parameters(json.loads(f.read()))
 

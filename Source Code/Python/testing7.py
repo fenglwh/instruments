@@ -1,13 +1,36 @@
-from labinstrument.SS.CMW500.CMW500_WIFI.CMW500_WIFI import CMW_WIFI
-from labinstrument.turntable.ETS2090.ETS2090 import ETS2090
+CONFigure:WLAN:MEAS:MEValuation:SCOunt:MODulation 20
+CONFigure:WLAN:MEAS:MEValuation:SCOunt:PVTime 20
+CONFigure:WLAN:MEAS:MEValuation:SCOunt:TSMask 20
+CONFigure:WLAN:MEAS:MEValuation:COMPensation:CESTimation PAYL
+CONFigure:WLAN:MEAS:MEValuation:COMPensation:TRACking:PHASe OFF
+CONFigure:WLAN:MEAS:MEValuation:SCONdition SLFail
+CONFigure:WLAN:MEAS:MEValuation:MOEXception ON
+CONFigure:WLAN:MEAS:MEValuation:TSMask:TROTime 0.0001
+CONFigure:WLAN:MEAS:MEValuation:TSMask:AFFTnum 5
 
-if __name__ == '__main__':
-    instrument=ETS2090('GPIB0::8::INSTR','GPIB::7::INSTR')
-    # for theta in range(0,180,15):
-    #     print('theta:{}'.format(theta))
-    #     instrument.theta.seek(theta)
-    #     for phi in range(0,360,15):
-    #         print('phi:{}'.format(phi))
-    #         instrument.phi.seek(phi)
-    instrument.theta.seek(90)
-    instrument.phi.seek(180)
+
+CONFigure:WLAN:MEAS:MEValuation:RESult ON,ON,ON,ON,ON,ON,ON,ON
+
+
+TRIGger:WLAN:MEAS:MEValuation:SOURce 'IF Power'
+TRIGger:WLAN:MEAS:MEValuation:TOUT 1
+TRIGger:WLAN:MEAS:MEValuation:THReshold -25
+TRIGger:WLAN:MEAS:MEValuation:SLOPe REDGe
+TRIGger:WLAN:MEAS:MEValuation:MGAP 0.00002
+
+
+FETCh:WLAN:MEAS:MEValuation:MODulation:OFDM:CURRent?
+FETCh:WLAN:MEAS:MEValuation:TSMask:OFDM:AVERage?
+FETCh:WLAN:MEAS:MEValuation:SFLatness:MINimum?
+FETCh:WLAN:MEAS:MEValuation:SFLatness:X:MINimum?
+FETCh:WLAN:MEAS:MEValuation:SFLatness:AVERage?
+
+
+FETCh:WLAN:MEAS:MEValuation:MODulation:DSSS:CURRent?
+FETCh:WLAN:MEAS:MEValuation:TSMask:DSSS:AVERage?
+FETCh:WLAN:MEAS:MEValuation:PVTime:REDGe:AVERage?
+FETCh:WLAN:MEAS:MEValuation:PVTime:FEDGe:AVERage?
+
+
+INIT:WLAN:MEAS:MEValuation
+ROUTe:WLAN:MEAS<i>:SCENario:CSPath
