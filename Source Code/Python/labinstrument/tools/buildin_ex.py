@@ -41,9 +41,23 @@ def dict_walk(param: dict, parent=''):
             values.append(key)
     yield tuple(parent), dicts, values
     for key in dicts:
-        parent.append(key)
-        for x in dict_walk(param[key], parent=parent):
+        cp=parent+[key,]
+        for x in dict_walk(param[key], parent=cp):
             yield x
+
+def dict_delta(dict1,dict2):
+    '''remain things in dict1 not in dict2'''
+    dict3=copy.deepcopy(dict1)
+    for x in list(dict_walk(dict1))[::-1]:
+        for y in x[1]:
+            if get_dict_with_key_list(dict1, x[0] + (y,))==get_dict_with_key_list(dict2, x[0] + (y,)):
+                get_dict_with_key_list(dict3,x[0]).pop(y)
+        for y in x[2]:
+            if get_dict_with_key_list(dict1,x[0]+ (y,))==get_dict_with_key_list(dict2,x[0]+ (y,)):
+                get_dict_with_key_list(dict3, x[0]).pop(y)
+
+    return dict_remove_empty(dict3)
+
 
 
 def get_dict_with_key_list(param: dict, key):

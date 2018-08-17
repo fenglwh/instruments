@@ -72,10 +72,16 @@ class GPIB:
        self.__init__(self.connect_string)
 
     def read(self):
-        return self.instrument.read()
+        try:
+            return self.instrument.read()
+        except Exception as e:
+            raise (e)
 
     def write(self,command):
-        self.instrument.write(command)
+        try:
+            self.instrument.write(command)
+        except Exception as e:
+            raise (e)
 
     def query(self,command):
         self.write(command)

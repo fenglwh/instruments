@@ -7,7 +7,7 @@ from ..CMW500Base import *
 import time
 
 
-class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
+class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
     def __init__(self, *args, **kwargs):
         super(CMW_WIFI, self).__init__(*args, **kwargs)
         self.GTL()
@@ -38,11 +38,25 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         self.signal_off()
         self.signal_on()
 
+    def connected_bool(self):
+        if self.connected()=='ASS':
+            return 1
+        else:
+            return 0
+
     def connected(self):
         'FETCh:WLAN:SIGN<i>:PSWitched:STATe?'
         'IDLE | PROBed | AUTHenticated | ASSociated | DEAuthenticated | DISassociated | CTIMeout'
         # IDLE   PROB     AUTH            ASS          DEA               DIS             CTIMeout
         return self.query('FETCh:WLAN:SIGN<i>:PSWitched:STATe?'.replace('<i>', str(self.signalling_No)))
+
+    def wait_for_connect(self,trigger=0):
+        while not trigger:
+            self.signal_on()
+            if self.connected()=='ASS':
+                return 1
+            else:
+                time.sleep(0.2)
 
     def connect(self):
         self.write('CALL:WLAN:SIGN<i>:ACTion:STATion:CONNect'.replace('<i>', str(self.signalling_No)))
@@ -63,7 +77,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
 
     def __set_freq(self, freq):
         self.write('CONFigure:WLAN:SIGN<i>:RFSettings:FREQuency {}'.replace('<i>', str(self.signalling_No)).format(
-            freq * 1000000))
+            freq))
 
     def __get_freq(self):
         return str(eval(self.query(
@@ -204,7 +218,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         self.write('CONFigure:WLAN:SIGN<i>:CONNection:DPERiod {}'.format(value).replace('<i>', str(self.signalling_No)))
 
     def __get_dim_period(self):
-        return self.query('CONFigure:WLAN:SIGN<i>:CONNection:DPERiod?')
+        return self.query('CONFigure:WLAN:SIGN<i>:CONNection:DPERiod?'.replace('<i>', str(self.signalling_No)))
 
     def __set_BSSID(self, bssid):
         self.write('CONFigure:WLAN:SIGN<i>:CONNection:BSSid {}'.format(bssid).replace('<i>', str(self.signalling_No)))
@@ -223,13 +237,13 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         self.write('CONF:WLAN:SIGN<i>:CONN:CCODe:CCConf {}'.format(country_code_settings).replace('<i>', str(self.signalling_No)))
 
     def __get_country_code_config(self):
-        return self.query('CONF:WLAN:SIGN<i>:CONN:CCODe:CCConf '.replace('<i>', str(self.signalling_No)))
+        return self.query('CONF:WLAN:SIGN<i>:CONN:CCODe:CCConf?'.replace('<i>', str(self.signalling_No)))
 
     def __set_country_code_state(self,country_code_state):
-        self.write('CONF:WLAN:SIGN<i>:CONN:CCODe:CCCS {}'.format(country_code_state).replace('<i>', str(self.signalling_No)))
+        self.write('CONF:WLAN:SIGN<i>:CONN:CCODe:CCST {}'.format(country_code_state).replace('<i>', str(self.signalling_No)))
 
     def __get_country_code_state(self):
-        return self.query('CONF:WLAN:SIGN<i>:CONN:CCODe:CCCS?').replace('<i>', str(self.signalling_No))
+        return self.query('CONF:WLAN:SIGN<i>:CONN:CCOD:CCST?'.replace('<i>', str(self.signalling_No)))
 
     def __set_WIFI_direct_authentication_type(self, authentication_type):
         self.write('CONFigure:WLAN:SIGN<i>:CONNection:WDIRect:ATYPe {}'.format(authentication_type).replace('<i>', str(
@@ -340,6 +354,8 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     def __get_security_encrypt_type(self):
         return self.query(
             'CONFigure:WLAN:SIGN<i>:CONNection:SECurity:ENCRyption?'.replace('<i>', str(self.signalling_No)))
+
+    # !!! WPA place here, should finished in days.
 
     def __set_WPS_authentication_type(self, value):
         self.write('CONFigure:WLAN:SIGN<i>:CONNection:SECurity:WPS:ATYPe {}'.format(value).replace('<i>', str(
@@ -497,7 +513,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
             'CONFigure:WLAN:SIGN<i>:IPVFour:STATic:SMASk {}'.format(value).replace('<i>', str(self.signalling_No)))
 
     def __get_IPV4_subnet_mask(self):
-        return self.query('CONFigure:WLAN:SIGN<i>:IPVFour:STATic:SMASk'.replace('<i>', str(self.signalling_No)))
+        return self.query('CONFigure:WLAN:SIGN<i>:IPVFour:STATic:SMASk?'.replace('<i>', str(self.signalling_No)))
 
     def __set_IPV4_gateway(self, value):
         self.write('CONFigure:WLAN:SIGN<i>:IPVFour:STATic:IPADdress:GATeway {}'.format(value).replace('<i>', str(
@@ -650,29 +666,45 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     def get_IP_address(self):
         return self.query('SENSe:WLAN:SIGN<i>:UESinfo:UEADdress:IPV<n>?'.replace('<i>', str(self.signalling_No)))
 
-    # config ,all status this part should be changable when operation mode changes
+    # config ,all status this part should be changable when operation mode changes!!!
 
     def __get_all_status(self):
-        pass
+        ret_val={}
+        ret_val['packet_generator_setting_status']=self.packet_generator_setting_status
+        ret_val['RF_setting_status']=self.RF_setting_status
+        ret_val['connection_setting_status']=self.connection_setting_status
+        ret_val['ip_setting_status']=self.ip_setting_status
+        ret_val['packet_generator_setting_status']=self.packet_generator_setting_status
+        ret_val['trigger_setting_status']=self.trigger_setting_status
+        return ret_val
 
-    def __set_all_status(self):
-        pass
+    def __set_all_status(self,value):
+        self.packet_generator_setting_status = value['packet_generator_setting_status']
+        self.RF_setting_status = value['RF_setting_status']
+        self.connection_setting_status = value['connection_setting_status']
+        self.ip_setting_status = value['ip_setting_status']
+        self.packet_generator_setting_status = value['packet_generator_setting_status']
+        self.trigger_setting_status = value['trigger_setting_status']
 
-    def __get_info_status(self):
-        pass
-
-    def __set_info_status(self):
-        pass
+    def __set_setting_status(self, value):
+        for k,v in value.items():
+            if getattr(self,k)!=v:
+                if k in ['BSSID','SSID','dim_period','operation_mode','scenario','bandwidth','standard',
+                         'security_encrypt_type','security_type']:
+                    self.signal_off()
+                setattr(self,k,v)
 
     def __get_packet_generator_status(self):
-        pass
-
-    def __set_packet_generatot_status(self):
-        pass
+        ret_val = {}
+        ret_val['packet_generator'] = self.packet_generator
+        ret_val['packet_generator_protocol'] = self.packet_generator_protocol
+        ret_val['packet_generator_IP'] = self.packet_generator_IP
+        ret_val['packet_generator_UDP_port'] = self.packet_generator_UDP_port
+        return ret_val
 
     def __get_RF_setting_status(self):
         ret_val = {}
-        ret_val['senario'] = self.senario
+        ret_val['scenario'] = self.scenario
         ret_val['operation_mode'] = self.operation_mode
         ret_val['standard'] = self.standard
         ret_val['freq'] = self.freq
@@ -680,15 +712,12 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         ret_val['tx_power'] = self.tx_power
         ret_val['pep_power'] = self.pep_power
         ret_val['bandwidth'] = self.bandwidth
-        ret_val['mimo_path'] = self.mimo_path
+        # ret_val['mimo_path'] = self.mimo_path
         ret_val['path'] = self.path
         ret_val['input_attanuation'] = self.input_attanuation
         ret_val['output_attanuation'] = self.output_attanuation
         ret_val['rx_mix_level_offset'] = self.rx_mix_level_offset
         return ret_val
-
-    def __set_RF_setting_status(self, value):
-        pass
 
     def __get_connection_status(self):
         ret_val = {}
@@ -698,8 +727,8 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         ret_val['SSID'] = self.SSID
         ret_val['country_code_config'] = self.country_code_config
         ret_val['country_code_state'] = self.country_code_state
-        ret_val['WIFI_direct_authentication_type'] = self.WIFI_direct_authentication_type
-        ret_val['WIFI_direct_config'] = self.WIFI_direct_config
+        # ret_val['WIFI_direct_authentication_type'] = self.WIFI_direct_authentication_type
+        # ret_val['WIFI_direct_config'] = self.WIFI_direct_config
         ret_val['uddrate_mode'] = self.uddrate_mode
         ret_val['DSSS_rate'] = self.DSSS_rate
         ret_val['OFDM_rate'] = self.OFDM_rate
@@ -710,9 +739,6 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         ret_val['security_type'] = self.security_type
         ret_val['security_encrypt_type'] = self.security_encrypt_type
         return ret_val
-
-    def __set_connection_status(self,value):
-        pass
 
     def __get_trigger_status(self):
         ret_val = {}
@@ -726,9 +752,6 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         ret_val['rx_mac_frame_min_length'] = self.rx_mac_frame_min_length
         return ret_val
 
-    def __set_trigger_status(self,value):
-        pass
-
     def __get_ip_status(self):
         ret_val = {}
         ret_val['IP_version'] = self.IP_version
@@ -738,11 +761,9 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
         ret_val['IPV4_gateway'] = self.IPV4_gateway
         ret_val['IPV4_DNS'] = self.IPV4_DNS
         ret_val['IPV4_DHCP'] = self.IPV4_DHCP
-        ret_val['BIPV6_prefix'] = self.IPV6_prefix
+        ret_val['IPV6_prefix'] = self.IPV6_prefix
         return ret_val
 
-    def __set_ip_status(self,value):
-        pass
 
     # ____________________________Properties____________________________
     #  IDLE   PROB     AUTH            ASS          DEA               DIS             CTIMeout
@@ -756,7 +777,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     operation_mode = property(__get_operation_mode, __set_operation_mode)
     standard = property(__get_standard, __set_standard)
     bandwidth = property(__get_bandwidth, __set_bandwidth)
-    senario = property(__get_senario, __set_senario)
+    scenario = property(__get_senario, __set_senario)
     path = property(__get_path, __set_path)
     mimo_path = property(__get_mimo_path, __set_mimo_path)
     input_attanuation = property(__get_input_attanuation, __set_input_attanuation)
@@ -830,19 +851,41 @@ class CMW_WIFI(CMW500Base, IConfigurable, OTASSInterface):
     RX_PER_limit = property(__get_PER_limit, __set_PER_limit)
 
     # ___________________________________________________________
-
-    RF_setting_status = property(__get_RF_setting_status, __set_RF_setting_status)
-    connection_setting_status=property(__get_connection_status,__set_connection_status)
-    trigger_setting_status=property(__get_trigger_status,__set_trigger_status)
-    packet_generator_setting_status=property(__get_packet_generator_status,__set_packet_generatot_status)
-    ip_setting_status=property(__get_ip_status,__set_ip_status)
+    all_setting_status=property(__get_all_status,__set_all_status)
+    RF_setting_status = property(__get_RF_setting_status, __set_setting_status)
+    connection_setting_status=property(__get_connection_status,__set_setting_status)
+    trigger_setting_status=property(__get_trigger_status,__set_setting_status)
+    packet_generator_setting_status=property(__get_packet_generator_status,__set_setting_status)
+    ip_setting_status=property(__get_ip_status,__set_setting_status)
 
 
     def set_parameters(self, parameter):
-        pass
+        self.signal_off()
+        self.all_setting_status=parameter
+
 
     def get_parameters(self):
-        pass
+        return self.all_setting_status
+
+    def save_snapshot(self, param):
+        """
+        This method is to save instrument's setting -> quick save
+        :param param: name of sav file, should be anything any type you want
+        :return: None 
+        """
+        file_path = os.path.join(__file__, 'config', str(param) + '.sav')
+        with open(file_path, 'w') as f:
+            f.write(json.dumps(self.get_parameters()))
+
+    def load_snapshot(self, param):
+        """
+        This method is to set quick save -> instrument's setting
+        :param param: name of sav file, should be anything any type you want
+        :return: None
+        """
+        file_path = os.path.join(__file__, 'config', str(param) + '.sav')
+        with open(file_path, 'r') as f:
+            self.set_parameters(json.loads(f.read()))
 
     def ota_meas_power(self):
         pass
