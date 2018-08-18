@@ -16,17 +16,17 @@
     <SUITE FILE_PATH="coverage/Python$testing5.coverage" NAME="testing5 Coverage Results" MODIFIED="1534466091519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$testing8.coverage" NAME="testing8 Coverage Results" MODIFIED="1534471990779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$freqTool.coverage" NAME="freqTool Coverage Results" MODIFIED="1530006109214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/labinstrment/tools" />
-    <SUITE FILE_PATH="coverage/Python$testing7.coverage" NAME="testing7 Coverage Results" MODIFIED="1534292608432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$unittest_CMW_WIFI.coverage" NAME="unittest_CMW_WIFI Coverage Results" MODIFIED="1534483354951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python$testing7.coverage" NAME="testing7 Coverage Results" MODIFIED="1534486752890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dist.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dist.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="300">
+              <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -35,8 +35,18 @@
       <file leaf-file-name="CMW500_WIFI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="134" column="8" lean-forward="false" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
+            <state relative-caret-position="16410">
+              <caret line="1094" column="0" lean-forward="false" selection-start-line="1094" selection-start-column="0" selection-end-line="1094" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing7.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testing7.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -47,9 +57,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-              <folding>
-                <marker date="1534483386381" expanded="true" signature="615:763" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -164,10 +172,10 @@
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/config/11n_2.4G_TIS.sav" />
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/config/11n_5G_6.5M_TRP.sav" />
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/config/11n_5G_TIS.sav" />
-        <option value="$PROJECT_DIR$/testing7.py" />
-        <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py" />
         <option value="$PROJECT_DIR$/unittest_CMW_WIFI.py" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py" />
+        <option value="$PROJECT_DIR$/testing7.py" />
       </list>
     </option>
   </component>
@@ -222,10 +230,106 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labinstrument" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labinstrument" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMW500" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labinstrument" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMW500" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMW500_WIFI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labinstrument" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMW500" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMW500_WIFI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,7 +365,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dist">
+  <component name="RunManager" selected="Python.testing7">
     <configuration default="false" name="dist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -300,25 +404,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="testing6" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing6.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="unittest_CMW_WIFI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -352,6 +437,25 @@
       <module name="Python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing8.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testing7" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Python" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing7.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -508,17 +612,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.dist" />
       <item index="1" class="java.lang.String" itemvalue="Python.testing5" />
-      <item index="2" class="java.lang.String" itemvalue="Python.testing6" />
-      <item index="3" class="java.lang.String" itemvalue="Python.unittest_CMW_WIFI" />
-      <item index="4" class="java.lang.String" itemvalue="Python.testing8" />
+      <item index="2" class="java.lang.String" itemvalue="Python.unittest_CMW_WIFI" />
+      <item index="3" class="java.lang.String" itemvalue="Python.testing8" />
+      <item index="4" class="java.lang.String" itemvalue="Python.testing7" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.dist" />
-        <item index="1" class="java.lang.String" itemvalue="Python.unittest_CMW_WIFI" />
-        <item index="2" class="java.lang.String" itemvalue="Python.testing8" />
-        <item index="3" class="java.lang.String" itemvalue="Python.testing5" />
-        <item index="4" class="java.lang.String" itemvalue="Python.testing6" />
+        <item index="0" class="java.lang.String" itemvalue="Python.testing7" />
+        <item index="1" class="java.lang.String" itemvalue="Python.dist" />
+        <item index="2" class="java.lang.String" itemvalue="Python.unittest_CMW_WIFI" />
+        <item index="3" class="java.lang.String" itemvalue="Python.testing8" />
+        <item index="4" class="java.lang.String" itemvalue="Python.testing5" />
       </list>
     </recent_temporary>
   </component>
@@ -542,16 +646,15 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20028612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21204819" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3493976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19742489" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19098713" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31445783" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -560,6 +663,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -688,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,19 +799,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/Unit_test_CMW500_WIFI.py" />
-    <entry file="file://$PROJECT_DIR$/labinstrument/tools/builtin_ex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/labinstrument/tools/builtin_ex.py" />
     <entry file="file://$PROJECT_DIR$/labinstrument/remote.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1256">
@@ -729,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-173">
           <caret line="225" column="20" lean-forward="true" selection-start-line="225" selection-start-column="20" selection-end-line="225" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,7 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="69" lean-forward="false" selection-start-line="0" selection-start-column="69" selection-end-line="0" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,7 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,15 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/config/11g_TIS.sav">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,7 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,7 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -812,7 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="63" lean-forward="false" selection-start-line="0" selection-start-column="63" selection-end-line="0" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,7 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,7 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -836,15 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing7.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -852,7 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="201" column="22" lean-forward="true" selection-start-line="201" selection-start-column="22" selection-end-line="201" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,28 +937,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="134" column="8" lean-forward="false" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <marker date="1534483386381" expanded="true" signature="615:763" ph="..." />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/config/11g_TIS.sav">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1621" lean-forward="true" selection-start-line="0" selection-start-column="53" selection-end-line="0" selection-end-column="1621" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="300">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16410">
+          <caret line="1094" column="0" lean-forward="false" selection-start-line="1094" selection-start-column="0" selection-end-line="1094" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding />
         </state>
       </provider>

@@ -1102,21 +1102,11 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
         return self.all_setting_status
 
     def save_snapshot(self, param):
-        """
-        This method is to save instrument's setting -> quick save
-        :param param: name of sav file, should be anything any type you want
-        :return: None 
-        """
         file_path = os.path.join(os.path.dirname(__file__), 'config', str(param) + '.sav')
         with open(file_path, 'w') as f:
             f.write(json.dumps(self.get_parameters()))
 
     def load_snapshot(self, param):
-        """
-        This method is to set quick save -> instrument's setting
-        :param param: name of sav file, should be anything any type you want
-        :return: None
-        """
         file_path = os.path.join(os.path.dirname(__file__), 'config', str(param) + '.sav')
         with open(file_path, 'r') as f:
             self.set_parameters(json.loads(f.read()))
