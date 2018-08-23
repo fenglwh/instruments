@@ -19,6 +19,24 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def set_parameters(self, parameter):
         self.signal_off()
         self.all_setting_status=parameter

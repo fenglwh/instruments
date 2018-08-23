@@ -7,8 +7,8 @@
 from ...remote import *
 class CMW500Base(GPIB):
 
-    def __init__(self,connect_string='',signalling_no=1):
-        super(CMW500Base, self).__init__(connect_string)
+    def __init__(self,*args, connect_string='',signalling_no=1,**kwargs):
+        super(CMW500Base, self).__init__(*args,**kwargs)
         self.signalling_No=signalling_no
 
     def CLS(self):

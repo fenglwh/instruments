@@ -4,10 +4,10 @@ import datetime
 import threading
 
 __Author__ = 'Adair.l'
-
+import pyvisa.errors
 import socket
 import visa
-
+import pyvisa.constants as constants
 
 class CommunicationUnit():
     def __init__(self,connect_string,target_type='GPIB',previous_type=None):
@@ -44,9 +44,15 @@ class GPIB:
                 self.connect_string=connect_string
             elif '.' in connect_string:
                 self.connect_string='TCPIP::{}'.format(connect_string)
-        self.rm=visa.ResourceManager()
-        print('connecting: {}'.format(self.connect_string))
-        self.instrument=self.rm.open_resource(self.connect_string)
+        self.rm = visa.ResourceManager()
+        self.vi_open_resource()
+
+    def vi_open_resource(self):
+        try:
+            print('connecting: {}'.format(self.connect_string))
+            self.instrument=self.rm.open_resource(self.connect_string)
+        except Exception as e:
+            print(e)
 
 
     def list_resources(self):
@@ -74,13 +80,23 @@ class GPIB:
     def read(self):
         try:
             return self.instrument.read()
+        except pyvisa.errors.VisaIOError as vi_error:
+            print('vierror:{}'.format(vi_error))
+            self.vi_open_resource()
+            return self.read()
         except Exception as e:
+            print(e)
             raise (e)
 
     def write(self,command):
         try:
             self.instrument.write(command)
+        except pyvisa.errors.VisaIOError as vi_error:
+            print('vierror:{}'.format(vi_error))
+            self.vi_open_resource()
+            self.write(command)
         except Exception as e:
+            print (e)
             raise (e)
 
     def query(self,command):
