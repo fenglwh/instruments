@@ -5,6 +5,7 @@ __Author__ = 'Adair.l'
 from ....Interface import *
 from ..CMW500Base import *
 import time
+import re
 
 
 
@@ -12,47 +13,58 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
     def __init__(self, *args, **kwargs):
         super(CMW_WIFI, self).__init__(*args, **kwargs)
         self.GTL()
+        # !!! try to modify here automatically but remember to change it in original json file
         self.tx_modulation_format='OFDM'
+        self.timeout=20
+
 
     def translate_datarate(self,datarate):
         dataratemap={
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
-            '':'',
+            '1':'D1MB',
+            '2':'D2MB',
+            '5.5':'C55M',
+            '6': 'BR12',
+            '9': 'BR34',
+            '11':'C11M',
+            '12':'QR12',
+            '18':'QR34',
+            '24':'Q1M12',
+            '36':'Q1M34',
+            '48':'Q6M23',
+            '54':'Q6M34',
+            'MCS0':'MCS',
+            'MCS1':'MCS1',
+            'MCS2':'MCS2',
+            'MCS3':'MCS3',
+            'MCS4':'MCS4',
+            'MCS5':'MCS5',
+            'MCS6':'MCS6',
+            'MCS7':'MCS7',
+            'MCS8':'MCS8',
+            'MCS9':'MCS9',
         }
-        return
+        return dataratemap[datarate]
+
+    def __get_version(self):
+        '''
+        this function return a float to maintain the version.
+        :return: 
+        '''
+        ret_value={}
+        sign_version= self.get_SW_version()['CMW_WLAN_Sig']
+        sign_C=sign_version[0]
+        sign_V=''.join(list(sign_version)[1:]).split('.')
+        sign_floated=float(('{}.'+'{:03d}'*(len(sign_V)-1)).format(*[int(x) for x in sign_V]))
+
+        meas_version= self.get_SW_version()['CMW_WLAN_Meas']
+        meas_C = meas_version[0]
+        meas_V = ''.join(list(meas_version)[1:]).split('.')
+        meas_floated =  float(('{}.' + '{:03d}' * (len(meas_V) - 1)).format(*[int(x) for x in meas_V]))
+
+        return sign_C,sign_floated,meas_C,meas_floated,sign_version,meas_version
+
+
+
 
     # signalling
 
@@ -703,10 +715,18 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
     def get_ul_package_rate(self):
         return self.query('READ:WLAN:SIGN<i>:PER?'.replace('<i>', str(self.signalling_No)))
 
+    def __set_dl_package_mode(self,value):
+        pass
+
+    def __get_dl_package_mode(self,value):
+        pass
+
     def __set_dl_package_rate(self, value):
+
         self.write('CONFigure:WLAN:SIGN<i>:PER:MCRate {}'.format(value).replace('<i>', str(self.signalling_No)))
 
     def __get_dl_package_rate(self):
+
         return self.query('CONFigure:WLAN:SIGN<i>:PER:MCRate?'.replace('<i>', str(self.signalling_No)))
 
     def init_per_measurement(self):
@@ -900,6 +920,7 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
         ret_val['RX_ack_type'] = self.RX_ack_type
         ret_val['RX_data_pattern'] = self.RX_data_pattern
         ret_val['RX_data_interval'] = self.RX_data_interval
+        ret_val['RX_dl_packet_mode'] = self.RX_dl_packet_mode
         ret_val['RX_dl_packet_rate'] = self.RX_dl_packet_rate
         ret_val['RX_packet_num'] = self.RX_packet_num
         ret_val['RX_payload_size'] = self.RX_payload_size
@@ -909,6 +930,7 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
 
     # ____________________________Properties____________________________
     #  IDLE   PROB     AUTH            ASS          DEA               DIS             CTIMeout
+    version=property(__get_version)
     # rfsetting
     signal_state = property(__get_signalling_state, __set_signalling_state)
     freq = property(__get_freq, __set_freq)
@@ -996,6 +1018,7 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
 
 
     RX_ack_type = property(__get_ack_type, __set_ack_type)
+    RX_dl_packet_mode = property(__get_dl_package_mode, __set_dl_package_mode)
     RX_dl_packet_rate = property(__get_dl_package_rate, __set_dl_package_rate)
     RX_data_pattern = property(__get_date_pattern, __set_data_pattern)
     RX_packet_num = property(__get_packet_num, __set_packet_num)
@@ -1049,7 +1072,7 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
             self.init_per_measurement()
         time_start = datetime.datetime.now()
         while self.get_tx_state() != 'RDY':
-            if (datetime.datetime.now() - time_start).seconds > timeout:
+            if (datetime.datetime.now() - time_start).seconds > self.timeout:
                 return
             time.sleep(0.2)
         return float(self.PER().split(',')[4])

@@ -7,3 +7,8 @@ if __name__ == '__main__':
     # instrument.make_a_conenction()
     # print(instrument.meas_rx_sensitivity())
     instrument.tx_power=-20
+
+
+
+
+

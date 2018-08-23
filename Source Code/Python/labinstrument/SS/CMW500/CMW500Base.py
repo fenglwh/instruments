@@ -51,5 +51,7 @@ class CMW500Base(GPIB):
     def show_remote_screen(self):
         self.write('SYSTem:DISPlay:UPDate ON')
 
+    def get_SW_version(self):
+        return dict(x.split(',') for x in self.query('SYST:BASE:OPT:VERS?').split(';'))
 
 
