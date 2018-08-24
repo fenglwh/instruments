@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500Base.py" charset="US-ASCII" />
     <file url="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/testing7.py" charset="US-ASCII" />
   </component>
