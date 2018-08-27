@@ -87,3 +87,21 @@ class CMW500Base(GPIB):
 
     def get_meas_SD_reached(self, re='.*'):
         return self.query('STATus:MEASurement:CONDition:SDReached? {}'.format(re))
+
+    def get_supported_tech(self):
+        tmp=self.query('SYSTem:HELP:STATus:BITS?')
+        tech_list=['GPRF','LTE',"WCDMA",'TDSCDMA','CDMA','EVDO','GSM']
+        supported=[]
+        unknown=[]
+        for line in tmp.split(','):
+            for tech in tech_list:
+                if ":{}:".format(tech) in line.upper():
+                    if tech not in supported:
+                        supported.append(tech)
+                    break
+            else:
+                unknown.append(line)
+        return supported
+
+
+
