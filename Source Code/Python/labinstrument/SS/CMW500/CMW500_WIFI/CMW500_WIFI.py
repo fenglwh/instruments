@@ -2,11 +2,11 @@
 import re
 
 __Author__ = 'Adair.l'
-from ....Interface import *
+from ....interface import *
 from ..CMW500Base import *
 import time
 import re
-
+import os
 
 
 class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
@@ -108,6 +108,9 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
         while not trigger:
             self.signal_on()
             if self.connected()=='ASS':
+                tmp=self.meas_rx_per()
+                if not type(tmp) is float or tmp>90:
+                    continue
                 return 1
             else:
                 time.sleep(0.2)
@@ -1090,29 +1093,36 @@ class CMW_WIFI(CMW500Base, IConfigurable,SnapShot, OTASSInterface):
                 return self.meas_rx_per()
             time.sleep(0.2)
         print(self.get_per_state())
-        return float(self.PER().split(',')[1])
+        ret_val=self.PER().split(',')
+        return float(ret_val[1]) if 'INV' not in ret_val[1] else ret_val
 
     def meas_rx_sensitivity(self,start=-20,limit=10,settling_time=0.1):
         step1=2
         step2=1
         step3=0.5
+        packet_num_step1=20
+        packet_num_step2=100
+        packet_num_step3=1000
         self.tx_power=start
+        self.RX_packet_num=packet_num_step1
         while self.meas_rx_per()<=limit:
-            self.tx_power=str(float(self.tx_power)-step1)
+            self.tx_power='{:.2f}'.format(float(self.tx_power)-step1)
             time.sleep(settling_time)
-            self.tx_power = str(float(self.tx_power) + step1)
+        self.tx_power = '{:.2f}'.format(float(self.tx_power) + step1+step2)
         time.sleep(settling_time)
+        self.RX_packet_num=packet_num_step2
         while self.meas_rx_per()<=limit:
-            self.tx_powe=str(float(self.tx_power)-step2)
+            self.tx_power='{:.2f}'.format(float(self.tx_power)-step2)
             time.sleep(settling_time)
-            self.tx_power = str(float(self.tx_power) + step2)
+        self.tx_power = '{:.2f}'.format(float(self.tx_power) + step2+step3)
         time.sleep(settling_time)
+        self.RX_packet_num=packet_num_step3
         while 1:
             tmp=self.meas_rx_per()
             if tmp>limit:
-                return int(self.meas_rx_per()) + step3
+                return int(self.tx_power) + step3
             else:
-                self.tx_power=str(float(self.tx_power)-step3)
+                self.tx_power='{:.2f}'.format(float(self.tx_power)-step3)
                 time.sleep(settling_time)
 
 
