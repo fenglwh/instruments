@@ -318,18 +318,17 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
     # !!! hot spot not finished
 
     def __set_uddrate_mode(self, bool_value):
+        'ENABle | DISable'
         self.write(
             'CONFigure:WLAN:SIGN<i>:CONNection:SRATes {}'.format('ENABle' if bool_value else 'DISable').replace('<i>',
                                                                                                                 str(
                                                                                                                     self.signalling_No)))
-        'ENABle | DISable'
 
     def __get_uddrate_mode(self):
         return self.query('CONFigure:WLAN:SIGN<i>:CONNection:SRATes?'.replace('<i>', str(self.signalling_No))) == 'ENAB'
 
     def __set_DSSS_rate(self, value):
-        # we concern this func will get two input types,one is the default CMW define
-        # the other is indexed 0 for disabled, 1 for mandatory, 2 for supported
+        # origin command in CMW, this is for the convinient
         # DSSS [1,2,5.5,11]
         # MAND,DIS,DIS,DIS
         # OFDM [6, 9, 12, 18, 24, 36, 48, 54]

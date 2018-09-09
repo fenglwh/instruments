@@ -13,7 +13,7 @@
     <SUITE FILE_PATH="coverage/Python$unittest_CMW_WIFI.coverage" NAME="unittest_CMW_WIFI Coverage Results" MODIFIED="1534483354951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$testing8.coverage" NAME="testing8 Coverage Results" MODIFIED="1534471990779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$freqTool.coverage" NAME="freqTool Coverage Results" MODIFIED="1530006109214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/labinstrment/tools" />
-    <SUITE FILE_PATH="coverage/Python$dist.coverage" NAME="dist Coverage Results" MODIFIED="1534483386320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python$dist.coverage" NAME="dist Coverage Results" MODIFIED="1536485408237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$testing5.coverage" NAME="testing5 Coverage Results" MODIFIED="1534466091519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$setup.coverage" NAME="setup Coverage Results" MODIFIED="1534124773444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$Unittests_in_testing7_py.coverage" NAME="Unittests in testing7.py Coverage Results" MODIFIED="1534992400811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -31,13 +31,23 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="py" value="1177" />
+          <entry key="py" value="1832" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="1177" />
+          <entry key="Python" value="1832" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -47,40 +57,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="929" column="38" lean-forward="true" selection-start-line="929" selection-start-column="38" selection-end-line="929" selection-end-column="38" />
+            <state relative-caret-position="198">
+              <caret line="331" column="27" lean-forward="true" selection-start-line="331" selection-start-column="27" selection-end-line="331" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing7.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500Base.py">
+        <entry file="file://$PROJECT_DIR$/conducted_script_testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_Cellular/CMW500_LTE.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/labinstrument/remote.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+            <state relative-caret-position="240">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -144,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/RFinstrment/Audio/__init__.py" />
         <option value="$PROJECT_DIR$/RFinstrment/interfaces/ota_interface.py" />
         <option value="$PROJECT_DIR$/RFinstrment/interfaces/basic_interface.py" />
         <option value="$PROJECT_DIR$/RFinstrment/interfaces/ss_interface.py" />
@@ -192,8 +178,9 @@
         <option value="$PROJECT_DIR$/unittest_CMW_WIFI.py" />
         <option value="$PROJECT_DIR$/labinstrument/remote.py" />
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_Cellular/CMW500_LTE.py" />
-        <option value="$PROJECT_DIR$/testing7.py" />
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500Base.py" />
+        <option value="$PROJECT_DIR$/testing7.py" />
+        <option value="$PROJECT_DIR$/conducted_script_testing.py" />
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py" />
       </list>
     </option>
@@ -266,7 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testing7">
+  <component name="RunManager" selected="Python.dist">
     <configuration name="dist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -403,9 +390,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.dist" />
         <item itemvalue="Python.testing7" />
         <item itemvalue="Python tests.Unittests in testing7.py" />
-        <item itemvalue="Python.dist" />
         <item itemvalue="Python.unittest_CMW_WIFI" />
         <item itemvalue="Python.testing8" />
       </list>
@@ -433,11 +420,11 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2446352" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2446352" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3493976" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25180724" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3566265" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -469,7 +456,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CTTLEngine/replace_signature.py" />
     <entry file="file://$PROJECT_DIR$/CTTLEngine/DataChanger.spec" />
     <entry file="file://$PROJECT_DIR$/CTTLEngine/Program/tools/Process_control.py" />
     <entry file="file://$PROJECT_DIR$/CTTLEngine/Program/Equipments/Interface.py" />
@@ -653,7 +639,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/unittest_CMW_WIFI.py" />
     <entry file="file://$PROJECT_DIR$/setup.py" />
-    <entry file="file://$PROJECT_DIR$/dist.py" />
     <entry file="file://$PROJECT_DIR$/labinstrument/interface.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
@@ -668,23 +653,6 @@
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyvisa/highlevel.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyvisa/resources/resource.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pyvisa/ctwrapper/highlevel.py" />
-    <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="929" column="38" lean-forward="true" selection-start-line="929" selection-start-column="38" selection-end-line="929" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing7.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500Base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_Cellular/CMW500_LTE.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -696,6 +664,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500Base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conducted_script_testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="331" column="27" lean-forward="true" selection-start-line="331" selection-start-column="27" selection-end-line="331" selection-end-column="27" />
         </state>
       </provider>
     </entry>
