@@ -3,7 +3,7 @@
 __Author__ = 'Adair.l'
 
 
-from ....Interface import *
+from ....interface import *
 from ..CMW500Base import *
 import time
 import re

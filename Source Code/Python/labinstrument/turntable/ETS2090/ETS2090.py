@@ -1,5 +1,5 @@
 from ...remote import *
-from ...Interface import *
+from ...interface import *
 import time
 
 class ETS2090(IConfigurable):
