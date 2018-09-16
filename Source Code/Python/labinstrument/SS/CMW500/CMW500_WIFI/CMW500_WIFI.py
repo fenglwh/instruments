@@ -358,20 +358,20 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         # D1MB D2MB C55M C11M BR12 BR34 QR12 QR34 Q1M12 Q1M34 Q6M23 Q634
         # 1    2    5.5  11   6    9    12   18   24    36    48    54
         self.write(
-            'CONFigure:WLAN:SIGN<i>:CONNection:MFRControl {}'.format(value).replace('<i>', str(self.signalling_No)))
+            'CONFigure:WLAN:SIGN<i>:CONNection:MFDef {}'.format(value).replace('<i>', str(self.signalling_No)))
 
     def __get_MFR_control_rate(self):
-        return self.query('CONFigure:WLAN:SIGN<i>:CONNection:MFRControl?'.replace('<i>', str(self.signalling_No)))
+        return self.query('CONFigure:WLAN:SIGN<i>:CONNection:MFDef?'.replace('<i>', str(self.signalling_No)))
 
     def __set_DFR_control_rate(self, value):
         # ENAB DIS
         # D1MB D2MB C55M C11M BR12 BR34 QR12 QR34 Q1M12 Q1M34 Q6M23 Q634
         # 1    2    5.5  11   6    9    12   18   24    36    48    54
         self.write(
-            'CONFigure:WLAN:SIGN<i>:CONNection:DFRControl {}'.format(value).replace('<i>', str(self.signalling_No)))
+            'CONFigure:WLAN:SIGN<i>:CONNection:DFDef {}'.format(value).replace('<i>', str(self.signalling_No)))
 
     def __get_DFR_control_rate(self):
-        return self.query('CONFigure:WLAN:SIGN<i>:CONNection:DFRControl?'.replace('<i>', str(self.signalling_No)))
+        return self.query('CONFigure:WLAN:SIGN<i>:CONNection:DFDef?'.replace('<i>', str(self.signalling_No)))
 
     def __set_rx_filter(self, value):
         self.write(
@@ -694,24 +694,56 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         return self.query('FETCh:WLAN:MEAS<i>:MEValuation:STATe:ALL?'.replace('<i>', str(self.signalling_No)))
 
     def get_tx_result(self):
-        tmp = 'FETCh:WLAN:MEAS:MEValuation:MODulation:{}:AVERage?'.format(self.tx_modulation_format).replace('<i>', str(
-            self.signalling_No))
-        result = self.query(tmp)
-        splited = [x for x in result.split(',')]
-        reality_indicator = splited[0]
-        datarate = splited[1]
-        package_length = splited[2]
-        burst_power = splited[3]
-        EVM_all_carrier = splited[4]
-        EVM_data_carrier = splited[5]
-        EVM_pilot_carrier = splited[6]
-        center_frequency_error = splited[7]
-        symbol_clock_error = splited[8]
-        IQ_offset = splited[9]
-        gain_imbalance = splited[10]
-        quadrature_error = splited[11]
+        if self.tx_modulation_format=='DSSS':
+            tmp = 'FETCh:WLAN:MEAS:MEValuation:MODulation:{}:AVERage?'.format(self.tx_modulation_format).replace('<i>', str(
+                self.signalling_No))
+            result = self.query(tmp)
+            splited = [x for x in result.split(',')]
+            reality_indicator = splited[0]
+            datarate = splited[1]
+            plcp_type = splited[2]
+            payload_length = splited[3]
+            burst_power = splited[4]
+            EVM_peak = splited[5]
+            EVM_RMS = splited[6]
+            center_frequency_error = splited[7]
+            symbol_clock_error = splited[8]
+            IQ_offset = splited[9]
+            gain_imbalance = splited[10]
+            quadrature_error = splited[11]
+            out_of_torlerace = splited[12]
+            burst_rate = splited[13]
+        else:
+            tmp = 'FETCh:WLAN:MEAS:MEValuation:MODulation:AVERage?'
+            result = self.query(tmp)
+            splited = [x for x in result.split(',')]
+            reality_indicator = splited[0]
+            out_of_torlerace = splited[1]
+            MCS_index = splited[2]
+            modulation = splited[3]
+            payload_length = splited[4]
+            measured_symbol = splited[5]
+            payload_bytes = splited[6]
+            gauard_interval = splited[7]
+            noss = splited[8]
+            nosts = splited[9]
+            datarate = splited[10]
+            power_backoff = splited[11]
+            burst_power = splited[12]
+            crest_fector = splited[13]
+            EVM_all_carrier = splited[14]
+            EVM_pilot_carrier = splited[15]
+            freq_error = splited[16]
+            clock_error = splited[17]
+            IQ_offset = splited[18]
+            dc_power = splited[19]
+            gain_imbalance = splited[20]
+            quad_error = splited[21]
+
+
+
         return {'power': burst_power, 'reality_indicator': reality_indicator, 'datarate': datarate,
-                'package_length': package_length}
+                'package_length': payload_length}
 
     # rx test
 
@@ -1070,7 +1102,8 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
             if (datetime.datetime.now() - time_start).seconds > timeout:
                 return
             time.sleep(0.2)
-        return self.get_tx_result()
+        tx_meas_result=self.get_tx_result()
+        return eval(tx_meas_result['power']) if tx_meas_result['reality_indicator']=='0' else 'NACK'
 
     def meas_tx_ack(self):
         self.packet_generator_OFF()
@@ -1098,7 +1131,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
             if (datetime.datetime.now() - time_start).seconds > timeout:
                 return self.meas_rx_per()
             time.sleep(0.2)
-        print(self.get_per_state())
+        # print(self.get_per_state())
         ret_val = self.PER().split(',')
         return float(ret_val[1]) if 'INV' not in ret_val[1] else ret_val
 
