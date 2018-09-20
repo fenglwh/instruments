@@ -15,7 +15,6 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         super(CMW_WIFI, self).__init__(*args, **kwargs)
         self.GTL()
         # !!! try to modify here automatically but remember to change it in original json file
-        self.tx_modulation_format = 'OFDM'
         self.timeout = 20
 
     def translate_datarate(self, datarate):
@@ -217,28 +216,30 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         tx_port = re_result.group(2)
         self.path = 'RF{},RX1,RF{},TX1'.format(port, tx_port)
 
-    def __set_input_attanuation(self, att_in):
+    def __set_input_attenuation(self, att_in):
         '!!!should take mimo as consideration too'
         self.write('CONFigure:WLAN:SIGN<i>:RFSettings:EATTenuation:INPut {}'.format(att_in).replace('<i>', str(
             self.signalling_No)))
 
-    def __get_input_attanuation(self):
+    def __get_input_attenuation(self):
         return self.query(
             'CONFigure:WLAN:SIGN<i>:RFSettings:EATTenuation:INPut?'.replace('<i>', str(self.signalling_No)))
 
-    def __set_output_attanuation(self, att_out):
+    def __set_output_attenuation(self, att_out):
         self.write('CONFigure:WLAN:SIGN<i>:RFSettings:EATTenuation:OUTPut {}'.format(att_out).replace('<i>', str(
             self.signalling_No)))
 
-    def __get_output_attanuation(self):
+    def __get_output_attenuation(self):
         return self.query(
             'CONFigure:WLAN:SIGN<i>:RFSettings:EATTenuation:OUTPut?'.replace('<i>', str(self.signalling_No)))
 
-    def set_attenuation(self, att_in, attout):
-        pass
+    def set_attenuation(self, att_in, att_out):
+        self.input_attenuation=att_in
+        self.output_attenuation=att_out
 
     def get_attenuation(self):
-        pass
+        return self.input_attenuation,self.output_attenuation
+
 
     def __set_RX_mix_level_offset(self, value):
         self.write(
@@ -631,11 +632,11 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
     def __get_tx_CSP(self):
         return self.query('ROUTe:WLAN:MEAS<i>:SCENario:CSPath?'.replace('<i>', str(self.signalling_No)))
 
-    def __set_tx_modulation(self, value):
+    def __set_tx_modulation_count(self, value):
         self.write('CONFigure:WLAN:MEAS<i>:MEValuation:SCOunt:MODulation {}'.format(value).replace('<i>', str(
             self.signalling_No)))
 
-    def __get_tx_modulateion(self):
+    def __get_tx_modulation_count(self):
         return self.query(
             'CONFigure:WLAN:MEAS<i>:MEValuation:SCOunt:MODulation?'.replace('<i>', str(self.signalling_No)))
 
@@ -677,6 +678,23 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
 
     def __get_tx_trigger_slope(self):
         return self.query('TRIGger:WLAN:MEAS<i>:MEValuation:SLOPe?'.replace('<i>', str(self.signalling_No)))
+
+    # AOFDm: 802.11a (OFDM), requires R&S CMW-KB036
+    # BDSSs: 802.11b (DSSS)
+    # GOFDm: 802.11g (OFDM)
+    # GDSSs: 802.11g (DSSS)
+    # NSISo: 802.11n (OFDM) SISO, requires option R&S CMW-KM651
+    # CMIMo: 802.11n (OFDM) composite MIMO, requires options R&S CMW-KM651 and R&S CMW-KM652
+    # SMIMo: 802.11n (OFDM) switched MIMO, requires options R&S CMW-KM651 and R&S CMW-KM653
+    # ACSiso: 802.11ac (OFDM) SISO, requires options R&S CMW-KM651 and R&S CMW-KM656
+    # POFDm: 802.11p (OFDM), requires R&S CMW-KM655
+    # *RST: GOFDm
+    def __set_tx_meas_standard(self,value):
+        self.write('CONFigure:WLAN:MEAS<i>:ISIGnal:STANdard {}'.format(value).replace('<i>', str(self.signalling_No)))
+
+    def __get_tx_meas_standard(self):
+        return self.query('CONFigure:WLAN:MEAS<i>:ISIGnal:STANdard?'.replace('<i>', str(self.signalling_No)))
+
 
     def init_tx_measurement(self):
         self.write('INITiate:WLAN:MEAS<i>:MEValuation'.replace('<i>', str(self.signalling_No)))
@@ -755,6 +773,14 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
     def get_ul_package_rate(self):
         return self.query('READ:WLAN:SIGN<i>:PER?'.replace('<i>', str(self.signalling_No)))
 
+    
+    def __set_dl_frame_format(self, value):
+        self.write('CONFigure:WLAN:SIGN<i>:PER:FDEF {}'.format(value).replace('<i>', str(self.signalling_No)))
+    
+    def __get_dl_frame_format(self):
+        return self.query('CONFigure:WLAN:SIGN<i>:PER:FDEF?'.replace('<i>', str(self.signalling_No)))
+
+
     def __set_dl_package_format(self, value):
         # format, bandwidth,coderate[,Guardinterval]
         # format: *NHT | HTM | *HTG | VHT
@@ -767,17 +793,21 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
 
     def __get_dl_package_format(self):
         query_return= self.query('CONFigure:WLAN:SIGN<i>:PER:FDEF?'.replace('<i>', str(self.signalling_No)))
-        format,bandwidth,coderate=query_return.split(',')
+        print(query_return)
+        format,bandwidth,coderate,GI=query_return.split(',')
         return format
 
 
     def __set_dl_package_rate(self, value):
-
-        self.write('CONFigure:WLAN:SIGN<i>:PER:MCRate {}'.format(value).replace('<i>', str(self.signalling_No)))
+        query_return = self.query('CONFigure:WLAN:SIGN<i>:PER:FDEF?'.replace('<i>', str(self.signalling_No)))
+        value = ','.join(query_return.split(',')[:2]+[value] + query_return.split(',')[3:])
+        self.write('CONFigure:WLAN:SIGN<i>:PER:FDEF {}'.format(value).replace('<i>', str(self.signalling_No)))
 
     def __get_dl_package_rate(self):
-
-        return self.query('CONFigure:WLAN:SIGN<i>:PER:MCRate?'.replace('<i>', str(self.signalling_No)))
+        query_return = self.query('CONFigure:WLAN:SIGN<i>:PER:FDEF?'.replace('<i>', str(self.signalling_No)))
+        print(query_return)
+        format, bandwidth, coderate, GI = query_return.split(',')
+        return coderate
 
     def init_per_measurement(self):
         self.write('INITiate:WLAN:SIGN<i>:PER'.replace('<i>', str(self.signalling_No)))
@@ -866,6 +896,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         self.packet_generator_setting_status = value['packet_generator_setting_status']
         self.trigger_setting_status = value['trigger_setting_status']
         self.tx_setting_status = value['trigger_setting_status']
+        self.rx_setting_status= value['rx_setting_status']
 
     def __set_setting_status(self, value):
         for k, v in value.items():
@@ -895,8 +926,8 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         ret_val['bandwidth'] = self.bandwidth
         # ret_val['mimo_path'] = self.mimo_path
         ret_val['path'] = self.path
-        ret_val['input_attanuation'] = self.input_attanuation
-        ret_val['output_attanuation'] = self.output_attanuation
+        ret_val['input_attenuation'] = self.input_attenuation
+        ret_val['output_attenuation'] = self.output_attenuation
         ret_val['rx_mix_level_offset'] = self.rx_mix_level_offset
         return ret_val
 
@@ -947,7 +978,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
 
     def __get_tx_setting_status(self):
         ret_val = {}
-        ret_val['tx_modulation'] = self.tx_modulation_format
+        ret_val['tx_meas_standard'] = self.tx_meas_standard
         ret_val['tx_CSP'] = self.tx_CSP
         ret_val['tx_CSP'] = self.tx_modulation
         ret_val['tx_PVTime'] = self.tx_PVTime
@@ -963,8 +994,11 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         ret_val['RX_ack_type'] = self.RX_ack_type
         ret_val['RX_data_pattern'] = self.RX_data_pattern
         ret_val['RX_data_interval'] = self.RX_data_interval
-        ret_val['RX_dl_packet_format'] = self.RX_dl_packet_format
-        ret_val['RX_dl_packet_rate'] = self.RX_dl_packet_rate
+        # abondon from 3.7
+        # ret_val['RX_dl_packet_format'] = self.RX_dl_packet_format
+        # ret_val['RX_dl_packet_rate'] = self.RX_dl_packet_rate
+        #___________________________-
+        ret_val['RX_dl_frame_format']=self.RX_dl_frame_format
         ret_val['RX_packet_num'] = self.RX_packet_num
         ret_val['RX_payload_size'] = self.RX_payload_size
         ret_val['RX_PER_limit'] = self.RX_PER_limit
@@ -986,8 +1020,8 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
     scenario = property(__get_senario, __set_senario)
     path = property(__get_path, __set_path)
     mimo_path = property(__get_mimo_path, __set_mimo_path)
-    input_attanuation = property(__get_input_attanuation, __set_input_attanuation)
-    output_attanuation = property(__get_output_attanuation, __set_output_attanuation)
+    input_attenuation = property(__get_input_attenuation, __set_input_attenuation)
+    output_attenuation = property(__get_output_attenuation, __set_output_attenuation)
     rx_mix_level_offset = property(__get_RX_mix_level_offset, __set_RX_mix_level_offset)
     tx_MIMO_mode = property(__get_tx_MIMO_mode, __set_tx_MIMO_mode)
     tx_MIMO_CSD = property(__get_tx_MIMO_CSD, __set_tx_MIMO_CSD)
@@ -1051,7 +1085,8 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
     packet_generator_UDP_port = property(__get_packet_generator_UDP_port, __set_packet_generator_UDP_port)
 
     tx_CSP = property(__get_tx_CSP, __set_tx_CSP)
-    tx_modulation = property(__get_tx_modulateion, __set_tx_modulation)
+    tx_meas_standard=property(__get_tx_meas_standard,__set_tx_meas_standard)
+    tx_modulation = property(__get_tx_modulation_count, __set_tx_modulation_count)
     tx_PVTime = property(__get_tx_PVTime, __set_tx_PVTime)
     tx_TSMask = property(__get_tx_TSMask, __set_tx_TSMask)
     tx_trigger_source = property(__get_tx_trigger_source, __set_tx_trigger_source)
@@ -1060,6 +1095,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
     tx_trigger_slope = property(__get_tx_trigger_slope, __set_tx_trigger_slope)
 
     RX_ack_type = property(__get_ack_type, __set_ack_type)
+    RX_dl_frame_format=property(__get_dl_frame_format,__set_dl_package_format)
     RX_dl_packet_format = property(__get_dl_package_format, __set_dl_package_format)
     RX_dl_packet_rate = property(__get_dl_package_rate, __set_dl_package_rate)
     RX_data_pattern = property(__get_dl_data_pattern, __set_dl_data_pattern)
@@ -1119,7 +1155,7 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
             time.sleep(0.2)
         return float(self.PER().split(',')[4])
 
-    def meas_rx_per(self, timeout=5):
+    def meas_rx_per(self, timeout=30):
         self.packet_generator_OFF()
         if self.get_per_state() in ['OFF', 'RDY']:
             self.init_per_measurement()
@@ -1135,8 +1171,8 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         ret_val = self.PER().split(',')
         return float(ret_val[1]) if 'INV' not in ret_val[1] else ret_val
 
-    def meas_rx_sensitivity(self, start=-20, limit=10, settling_time=0.1):
-        step1 = 2
+    def meas_rx_sensitivity(self, start=-30, limit=10, settling_time=0.1):
+        step1 = 5
         step2 = 1
         step3 = 0.5
         packet_num_step1 = 20
@@ -1159,7 +1195,9 @@ class CMW_WIFI(CMW500Base, IConfigurable, SnapShot, OTASSInterface):
         while 1:
             tmp = self.meas_rx_per()
             if tmp > limit:
-                return int(self.tx_power) + step3
+                ret_val='{:.2f}'.format(float(self.tx_power)+ step3)
+                self.tx_power=start
+                return ret_val
             else:
                 self.tx_power = '{:.2f}'.format(float(self.tx_power) - step3)
                 time.sleep(settling_time)
