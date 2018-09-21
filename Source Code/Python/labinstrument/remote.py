@@ -37,22 +37,31 @@ class CommunicationUnit():
 
 class GPIB:
     def __init__(self, connect_string, GPIB_number=0):
-        if type(connect_string) is int or connect_string.isdigit() :
-            self.connect_string='GPIB{}::{}::INSTR'.format(GPIB_number, connect_string)
-        elif type(connect_string) is str:
-            if 'TCPIP' in connect_string or 'GPIB' in connect_string:
-                self.connect_string=connect_string
-            elif '.' in connect_string:
-                self.connect_string='TCPIP::{}'.format(connect_string)
-        self.rm = visa.ResourceManager()
-        self.vi_open_resource()
 
-    def vi_open_resource(self):
+        self.rm = visa.ResourceManager()
+        self.vi_open_resource(GPIB_number)
+
+    def vi_open_resource(self,GPIB_number):
+        if type(GPIB_number) is int :
+            connect_string='GPIB{}::{}::INSTR'.format(GPIB_number, GPIB_number)
+        elif type(GPIB_number) is str:
+            if GPIB_number.isdigit():
+                connect_string = 'GPIB{}::{}::INSTR'.format(GPIB_number, GPIB_number)
+            if 'TCPIP' in GPIB_number or 'GPIB' in GPIB_number:
+                connect_string=GPIB_number
+            elif '.' in GPIB_number:
+                connect_string='TCPIP::{}'.format(GPIB_number)
+            else:
+                connect_string = GPIB_number
+        else:
+            connect_string=GPIB_number
+
         try:
-            print('connecting: {}'.format(self.connect_string))
-            self.instrument=self.rm.open_resource(self.connect_string)
+            print('connecting: {}'.format(connect_string))
+            self.instrument=self.rm.open_resource(connect_string)
         except Exception as e:
             print(e)
+            raise (e)
 
 
     def list_resources(self):
