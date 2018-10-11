@@ -58,8 +58,29 @@
       <file leaf-file-name="CMW500_WIFI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7011">
+            <state relative-caret-position="-15642">
               <caret line="369" column="50" selection-start-line="369" selection-start-column="50" selection-end-line="369" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conducted_GUI.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ConductedTest/conducted_GUI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConductedTest/config.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -73,25 +94,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="conducted_script_testing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conducted_script_testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="51" selection-start-column="51" selection-end-column="51" />
+            <state relative-caret-position="114">
+              <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conducted_GUI.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ConductedTest/conducted_GUI.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="case_generator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ConductedTest/case_generator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="testing8.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testing8.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -155,8 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/RFinstrment/interfaces/ss_interface.py" />
-        <option value="$PROJECT_DIR$/RFinstrment/interfaces/sg_interface.py" />
         <option value="$PROJECT_DIR$/RFinstrment/interfaces/na_interface.py" />
         <option value="$PROJECT_DIR$/RFinstrment/interfaces/ps_interface.py" />
         <option value="$PROJECT_DIR$/RFinstrment/interfaces/switch_interface.py" />
@@ -201,10 +227,12 @@
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_Cellular/CMW500_LTE.py" />
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500Base.py" />
         <option value="$PROJECT_DIR$/conducted_script_testing.py" />
-        <option value="$PROJECT_DIR$/testing8.py" />
         <option value="$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py" />
         <option value="$PROJECT_DIR$/testing7.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/testing8.py" />
+        <option value="$PROJECT_DIR$/ConductedTest/case_generator.py" />
+        <option value="$PROJECT_DIR$/ConductedTest/config.txt" />
         <option value="$PROJECT_DIR$/ConductedTest/conducted_GUI.py" />
       </list>
     </option>
@@ -215,7 +243,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="width" value="3000" />
     <option name="height" value="2000" />
   </component>
@@ -224,7 +252,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,15 +264,47 @@
               <item name="Python" type="462c0819:PsiDirectoryNode" />
               <item name="ConductedTest" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="dist_compiled" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="labinstrument" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="labinstrument" type="462c0819:PsiDirectoryNode" />
+              <item name="SS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="labinstrument" type="462c0819:PsiDirectoryNode" />
+              <item name="SS" type="462c0819:PsiDirectoryNode" />
+              <item name="CMW500" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="labinstrument" type="462c0819:PsiDirectoryNode" />
+              <item name="SS" type="462c0819:PsiDirectoryNode" />
+              <item name="CMW500" type="462c0819:PsiDirectoryNode" />
+              <item name="CMW500_WIFI" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Python36/Scripts/pyuic5.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
@@ -276,7 +335,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testing7">
+  <component name="RunManager" selected="Python.testing8">
+    <configuration name="conducted_GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ConductedTest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ConductedTest/conducted_GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="dist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -334,25 +411,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="unittest_CMW_WIFI" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unittest_CMW_WIFI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -392,18 +450,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.dist" />
-      <item itemvalue="Python.unittest_CMW_WIFI" />
       <item itemvalue="Python.testing8" />
       <item itemvalue="Python.testing7" />
       <item itemvalue="Python tests.Unittests in testing7.py" />
+      <item itemvalue="Python.conducted_GUI" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testing7" />
         <item itemvalue="Python.testing8" />
+        <item itemvalue="Python.conducted_GUI" />
+        <item itemvalue="Python.testing7" />
         <item itemvalue="Python.dist" />
         <item itemvalue="Python tests.Unittests in testing7.py" />
-        <item itemvalue="Python.unittest_CMW_WIFI" />
       </list>
     </recent_temporary>
   </component>
@@ -426,18 +484,19 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
+    <frame x="-6" y="-6" width="1513" height="973" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25360826" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25704467" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22867298" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22867298" />
       <window_info anchor="right" id="Structure" order="5" side_tool="true" visible="true" weight="0.18350515" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3566265" />
+      <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -464,10 +523,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CTTLEngine/Program/Equipments/Interface.py" />
-    <entry file="file://$PROJECT_DIR$/CTTLEngine/Program/tools/FreqTool.py" />
-    <entry file="file://$PROJECT_DIR$/CTTLEngine/Program/tools/Convertor.py" />
-    <entry file="file://$PROJECT_DIR$/CTTLEngine/Program/tools/buildin_ex.py" />
     <entry file="file://$PROJECT_DIR$/CTTLEngine/Program/tools/powerTool.py" />
     <entry file="file://$PROJECT_DIR$/labinstrment/release.py" />
     <entry file="file://$PROJECT_DIR$/labinstrument/release/FreqTool.py" />
@@ -677,18 +732,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conducted_script_testing.py" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="51" selection-start-column="51" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConductedTest/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConductedTest/untitled.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testing8.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConductedTest/case_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conducted_script_testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/labinstrument/SS/CMW500/CMW500_WIFI/CMW500_WIFI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7011">
+        <state relative-caret-position="-15642">
           <caret line="369" column="50" selection-start-line="369" selection-start-column="50" selection-end-line="369" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConductedTest/config.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -699,15 +794,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/ConductedTest/conducted_GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="51" selection-start-column="51" selection-end-column="51" />
+        <state relative-caret-position="285">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConductedTest/conducted_GUI.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
