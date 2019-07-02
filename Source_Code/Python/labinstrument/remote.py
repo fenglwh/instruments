@@ -37,7 +37,7 @@ class CommunicationUnit():
 
 class GPIB:
     def __init__(self, connect_string, GPIB_number=0):
-
+        self.connect_string=''
         self.rm = visa.ResourceManager()
         self.vi_open_resource(GPIB_number)
 
@@ -80,7 +80,7 @@ class GPIB:
                 if str(arg).lower() in resource.lower():
                     return resource
                 else:
-                    raise Exception("We can not point out which resource you are using\nthe arg you passed is".format(arg))
+                    raise Exception("We can not point out which resource you are using\nthe arg you passed is:{}".format(arg))
 
 
     def __init__instrument(self):
