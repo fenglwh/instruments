@@ -39,7 +39,7 @@ class GPIB:
     def __init__(self, connect_string, GPIB_number=0):
         self.connect_string=''
         self.rm = visa.ResourceManager()
-        self.vi_open_resource(GPIB_number)
+        self.vi_open_resource(connect_string)
 
     def vi_open_resource(self,GPIB_number):
         if type(GPIB_number) is int :
