@@ -6,7 +6,7 @@ import threading
 __Author__ = 'Adair.l'
 import pyvisa.errors
 import socket
-import visa
+import pyvisa as visa
 import pyvisa.constants as constants
 
 class CommunicationUnit():
